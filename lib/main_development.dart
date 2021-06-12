@@ -11,8 +11,8 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:rick_and_morty_verse/app/app.dart';
-import 'package:rick_and_morty_verse/app/app_bloc_observer.dart';
+import 'package:rick_and_morty_verse/features/app/app.dart';
+import 'package:rick_and_morty_verse/features/app/app_bloc_observer.dart';
 
 void main() {
   Bloc.observer = AppBlocObserver();

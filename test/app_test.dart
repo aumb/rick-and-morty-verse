@@ -6,7 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rick_and_morty_verse/app/app.dart';
+import 'package:rick_and_morty_verse/features/app/app.dart';
 
 void main() {
   group('App', () {
