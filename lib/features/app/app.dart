@@ -6,7 +6,11 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:rick_and_morty_verse/core/cubits/theme/theme_cubit.dart';
+import 'package:rick_and_morty_verse/core/enums/theme_state.dart';
+import 'package:rick_and_morty_verse/features/home/home_page.dart';
 import 'package:rick_and_morty_verse/features/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -14,17 +18,25 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        accentColor: const Color(0xFF13B9FF),
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-      ),
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => ThemeCubit()),
       ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: Container(),
+      child: BlocBuilder<ThemeCubit, ThemeState>(
+        builder: (context, state) {
+          return MaterialApp(
+            theme: context.watch<ThemeCubit>().lightTheme,
+            darkTheme: context.watch<ThemeCubit>().darkTheme,
+            themeMode: context.watch<ThemeCubit>().themeMode,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+            ],
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: const HomePage(),
+          );
+        },
+      ),
     );
   }
 }

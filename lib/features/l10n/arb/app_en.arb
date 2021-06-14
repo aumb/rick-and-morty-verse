@@ -3,5 +3,29 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "settings": "Settings",
+    "@settings": {
+        "description": "Text shown as the title of the Settings Page"
+    },
+    "themeTitle": "Appearance",
+    "@themeTitle": {
+        "description": "Text shown as the title of the theme list tile"
+    },
+    "themeSubTitle": "Choose your prefered theme",
+    "@themeSubTitle": {
+        "description": "Text shown as the sub-title of the theme list tile"
+    },
+    "darkTheme": "Dark Theme",
+    "@darkTheme": {
+        "description": "Text shown as the title of the radio widget for the dark theme option"
+    },
+    "lightTheme": "Light Theme",
+    "@lightTheme": {
+        "description": "Text shown as the title of the radio widget for the light theme option"
+    },
+    "systemTheme": "System Theme",
+    "@systemTheme": {
+        "description": "Text shown as the title of the radio widget for the system theme option"
     }
 }
