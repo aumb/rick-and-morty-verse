@@ -23,6 +23,10 @@ class CharacterRepository implements CharacterRepositoryContract {
           variables: {'page': page},
         ),
       );
+      if (result.hasException) {
+        safePrint(result.exception.toString());
+        return Left(ServerFailure());
+      }
       if (result.data == null) {
         return const Right([]);
       }

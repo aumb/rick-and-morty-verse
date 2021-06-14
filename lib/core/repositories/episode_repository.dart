@@ -23,10 +23,14 @@ class EpisodeRepository implements EpisodeRepositoryContract {
           variables: {'page': page},
         ),
       );
+      if (result.hasException) {
+        safePrint(result.exception.toString());
+        return Left(ServerFailure());
+      }
       if (result.data == null) {
         return const Right([]);
       }
-      final _episodeResponse = result.data?['episodes'] as Map?;
+      final _episodeResponse = result.data!['episodes'] as Map?;
       final _episodeResults = _episodeResponse?['results'];
 
       return Right(Episode.fromJsonList(_episodeResults) ?? []);

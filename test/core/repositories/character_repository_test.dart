@@ -50,6 +50,15 @@ void main() {
     when(() => mockGraphQlClient.query(any())).thenThrow(Exception());
   }
 
+  void setupExceptionResponse() {
+    when(() => mockGraphQlClient.query(any())).thenAnswer(
+      (_) async => QueryResult(
+        source: QueryResultSource.network,
+        exception: OperationException(),
+      ),
+    );
+  }
+
   group('getCharacters', () {
     test('should return a list of characters if response is successfull',
         () async {
@@ -86,5 +95,16 @@ void main() {
 
       expect(failure, isA<ServerFailure>());
     });
+  });
+
+  test('should return a server failure if response has exception', () async {
+    setupExceptionResponse();
+    dynamic failure;
+
+    final result = await repository.getCharacters(1);
+
+    result.fold((l) => failure = l, (r) => null);
+
+    expect(failure, isA<ServerFailure>());
   });
 }
