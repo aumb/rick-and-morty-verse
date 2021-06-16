@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rick_and_morty_verse/components/list_page_skeleton.dart';
 import 'package:rick_and_morty_verse/core/blocs/characters/characters_bloc.dart';
 import 'package:rick_and_morty_verse/core/models/character/character.dart';
 

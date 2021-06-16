@@ -13,7 +13,5 @@ class EpisodeBloc extends Bloc<EpisodeEvent, EpisodeState> {
   @override
   Stream<EpisodeState> mapEventToState(
     EpisodeEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
-  }
+  ) async* {}
 }
