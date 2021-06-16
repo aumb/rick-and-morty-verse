@@ -18,29 +18,20 @@ class ThemeUtils {
     accentColor: ColorUtils.lightAccentColor,
     pageTransitionsTheme: _pageTransitionsTheme,
     textTheme: GoogleFonts.concertOneTextTheme(ThemeData.light().textTheme),
-    popupMenuTheme: PopupMenuThemeData(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
-      ),
-    ),
+    bottomAppBarColor: ColorUtils.lightBottomAppBarColor,
   );
 
   /// Dark style
   static final ThemeData dark = ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: ColorUtils.darkPrimaryColor,
-    accentColor: ColorUtils.darkAccentColor,
-    canvasColor: ColorUtils.darkCanvasColor,
-    scaffoldBackgroundColor: ColorUtils.darkBackgroundColor,
-    cardColor: ColorUtils.darkCardColor,
-    dividerColor: ColorUtils.darkDividerColor,
-    dialogBackgroundColor: ColorUtils.darkCardColor,
-    pageTransitionsTheme: _pageTransitionsTheme,
-    textTheme: GoogleFonts.concertOneTextTheme(ThemeData.dark().textTheme),
-    popupMenuTheme: PopupMenuThemeData(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
-      ),
-    ),
-  );
+      brightness: Brightness.dark,
+      primaryColor: ColorUtils.darkPrimaryColor,
+      accentColor: ColorUtils.darkAccentColor,
+      canvasColor: ColorUtils.darkCanvasColor,
+      scaffoldBackgroundColor: ColorUtils.darkBackgroundColor,
+      cardColor: ColorUtils.darkCardColor,
+      dividerColor: ColorUtils.darkDividerColor,
+      dialogBackgroundColor: ColorUtils.darkCardColor,
+      pageTransitionsTheme: _pageTransitionsTheme,
+      textTheme: GoogleFonts.concertOneTextTheme(ThemeData.dark().textTheme),
+      bottomAppBarColor: ColorUtils.darkBottomAppBarColor);
 }

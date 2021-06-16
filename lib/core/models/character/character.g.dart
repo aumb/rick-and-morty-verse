@@ -1,5 +1,4 @@
 // coverage:ignore-file
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'character.dart';
@@ -10,7 +9,7 @@ part of 'character.dart';
 
 _$_Character _$_$_CharacterFromJson(Map<String, dynamic> json) {
   return _$_Character(
-    id: json['id'] as int?,
+    id: json['id'] as String?,
     name: json['name'] as String?,
     status: CharacterStatus.getCharacterStatusEnum(json['status'] as String?),
     species: json['species'] as String?,

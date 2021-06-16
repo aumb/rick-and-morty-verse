@@ -9,7 +9,7 @@ import '../../fixtures/fixture_reader.dart';
 
 void main() {
   final tCharacterModel = Character(
-    id: 38,
+    id: '38',
     name: 'Beth Smith',
     status: CharacterStatusEnum.alive,
     species: 'Human',

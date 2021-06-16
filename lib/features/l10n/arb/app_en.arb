@@ -27,5 +27,29 @@
     "systemTheme": "System Theme",
     "@systemTheme": {
         "description": "Text shown as the title of the radio widget for the system theme option"
+    },
+    "characters": "Characters",
+    "@characters": {
+        "description": "Text shown as the title of the Characters Page"
+    },
+    "episodes": "Episodes",
+    "@episodes": {
+        "description": "Text shown as the title of the Episodes Page"
+    },
+    "locations": "Locations",
+    "@locations": {
+        "description": "Text shown as the title of the Locations Page"
+    },
+    "alive": "Alive",
+    "@alive": {
+        "description": "Text shown as the label of CharacterStatusEnum Alive"
+    },
+    "dead": "Dead",
+    "@dead": {
+        "description": "Text shown as the label texts CharacterStatusEnum Dead"
+    },
+    "unknown": "Unknown",
+    "@unkown": {
+        "description": "Text shown as the label texts CharacterStatusEnum Unknown"
     }
 }

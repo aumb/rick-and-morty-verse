@@ -1,5 +1,4 @@
 // coverage:ignore-file
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
@@ -23,7 +22,7 @@ class _$CharacterTearOff {
   const _$CharacterTearOff();
 
   _Character call(
-      {required int? id,
+      {required String? id,
       required String? name,
       @JsonKey(fromJson: CharacterStatus.getCharacterStatusEnum, includeIfNull: true, disallowNullValue: false)
           required CharacterStatusEnum? status,
@@ -62,7 +61,7 @@ const $Character = _$CharacterTearOff();
 
 /// @nodoc
 mixin _$Character {
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(
       fromJson: CharacterStatus.getCharacterStatusEnum,
@@ -90,7 +89,7 @@ abstract class $CharacterCopyWith<$Res> {
   factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
       _$CharacterCopyWithImpl<$Res>;
   $Res call(
-      {int? id,
+      {String? id,
       String? name,
       @JsonKey(fromJson: CharacterStatus.getCharacterStatusEnum, includeIfNull: true, disallowNullValue: false)
           CharacterStatusEnum? status,
@@ -135,7 +134,7 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -213,7 +212,7 @@ abstract class _$CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       __$CharacterCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? id,
+      {String? id,
       String? name,
       @JsonKey(fromJson: CharacterStatus.getCharacterStatusEnum, includeIfNull: true, disallowNullValue: false)
           CharacterStatusEnum? status,
@@ -261,7 +260,7 @@ class __$CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -332,7 +331,7 @@ class _$_Character implements _Character {
       _$_$_CharacterFromJson(json);
 
   @override
-  final int? id;
+  final String? id;
   @override
   final String? name;
   @override
@@ -427,7 +426,7 @@ class _$_Character implements _Character {
 
 abstract class _Character implements Character {
   const factory _Character(
-      {required int? id,
+      {required String? id,
       required String? name,
       @JsonKey(fromJson: CharacterStatus.getCharacterStatusEnum, includeIfNull: true, disallowNullValue: false)
           required CharacterStatusEnum? status,
@@ -445,7 +444,7 @@ abstract class _Character implements Character {
       _$_Character.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @override
   String? get name => throw _privateConstructorUsedError;
   @override

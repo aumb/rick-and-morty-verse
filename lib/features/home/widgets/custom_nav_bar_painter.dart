@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomNavBarPainter extends CustomPainter {
+  CustomNavBarPainter({required this.backgroundColor});
+
+  final Color backgroundColor;
+
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
-      ..color = Colors.black
-      ..style = PaintingStyle.fill;
+      ..style = PaintingStyle.fill
+      ..color = backgroundColor;
 
     var path = Path()
       ..moveTo(0, 20)
@@ -19,7 +23,7 @@ class CustomNavBarPainter extends CustomPainter {
       ..lineTo(0, size.height)
       ..lineTo(0, 20);
     canvas
-      ..drawShadow(path, Colors.black, 5, true)
+      ..drawShadow(path, Colors.green, 5, true)
       ..drawPath(path, paint);
   }
 

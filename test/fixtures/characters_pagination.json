@@ -2,7 +2,7 @@
     "characters": {
         "results": [
             {
-                "id": 38,
+                "id": "38",
                 "name": "Beth Smith",
                 "status": "Alive",
                 "species": "Human",
@@ -22,7 +22,7 @@
                 "created": "2017-11-05T09:48:44.230Z"
             },
             {
-                "id": 38,
+                "id": "38",
                 "name": "Beth Smith",
                 "status": "Alive",
                 "species": "Human",
@@ -42,7 +42,7 @@
                 "created": "2017-11-05T09:48:44.230Z"
             },
             {
-                "id": 38,
+                "id": "38",
                 "name": "Beth Smith",
                 "status": "Alive",
                 "species": "Human",

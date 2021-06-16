@@ -6,16 +6,20 @@ class PageSkeleton extends StatelessWidget {
     Key? key,
     required this.title,
     required this.body,
+    this.controller,
   })  : assert(body is SingleChildRenderObjectWidget ||
-            body is SliverMultiBoxAdaptorWidget),
+            body is SliverMultiBoxAdaptorWidget ||
+            body is SliverFillRemaining),
         super(key: key);
 
   final String title;
   final Widget body;
+  final ScrollController? controller;
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      controller: controller,
       slivers: [
         SliverToBoxAdapter(
           child: HeaderTextWidget(

@@ -1,6 +1,6 @@
 part of 'characters_bloc.dart';
 
 @freezed
-class CharacterEvent with _$CharacterEvent {
-  const factory CharacterEvent.started() = _Started;
+class CharactersEvent with _$CharactersEvent {
+  const factory CharactersEvent.getCharacters() = _GetCharacters;
 }

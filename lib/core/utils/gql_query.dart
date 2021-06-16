@@ -10,6 +10,12 @@ mixin GqlQuery {
         type
         species
         image
+        location {
+          name
+        }
+        episode {
+          name
+        }
       }
     }
   }

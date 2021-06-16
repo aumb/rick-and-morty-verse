@@ -20,7 +20,9 @@ class CustomNavBar extends StatelessWidget {
       children: [
         CustomPaint(
           size: Size(size.width, 80),
-          painter: CustomNavBarPainter(),
+          painter: CustomNavBarPainter(
+            backgroundColor: Theme.of(context).bottomAppBarColor,
+          ),
         ),
         Center(
           heightFactor: 0.6,

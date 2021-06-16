@@ -21,7 +21,7 @@ void main() {
 
     group('HomeEvent.itemSelected', () {
       blocTest<HomeBloc, HomeState>(
-        'emits [FavoritesLoading, FavoritesLoaded] when caching is successful',
+        'emits HomeState.navigationScreenChanged(0) page has changed',
         build: () {
           return HomeBloc();
         },

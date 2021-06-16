@@ -1,25 +1,25 @@
 import 'package:dartz/dartz.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:rick_and_morty_verse/core/models/episode/episode.dart';
 import 'package:rick_and_morty_verse/core/models/failure.dart';
-import 'package:rick_and_morty_verse/core/models/location/location.dart';
 import 'package:rick_and_morty_verse/core/utils/gql_query.dart';
 import 'package:rick_and_morty_verse/core/utils/safe_print.dart';
 
-abstract class RMLocationRepositoryContract {
-  Future<Either<Failure, List<RMLocation?>>> getLocations(int page);
+abstract class EpisodesRepositoryContract {
+  Future<Either<Failure, List<Episode?>>> getEpisodes(int page);
 }
 
-class RMLocationRepository implements RMLocationRepositoryContract {
-  const RMLocationRepository(this._client);
+class EpisodesRepository implements EpisodesRepositoryContract {
+  const EpisodesRepository(this._client);
 
   final GraphQLClient _client;
 
   @override
-  Future<Either<Failure, List<RMLocation?>>> getLocations(int page) async {
+  Future<Either<Failure, List<Episode?>>> getEpisodes(int page) async {
     try {
       final result = await _client.query(
         QueryOptions(
-          document: gql(GqlQuery.locationsQuery),
+          document: gql(GqlQuery.episodesQuery),
           variables: {'page': page},
         ),
       );
@@ -30,10 +30,10 @@ class RMLocationRepository implements RMLocationRepositoryContract {
       if (result.data == null) {
         return const Right([]);
       }
-      final _locationResponse = result.data?['locations'] as Map?;
-      final _locationResults = _locationResponse?['results'];
+      final _episodeResponse = result.data!['episodes'] as Map?;
+      final _episodeResults = _episodeResponse?['results'];
 
-      return Right(RMLocation.fromJsonList(_locationResults) ?? []);
+      return Right(Episode.fromJsonList(_episodeResults) ?? []);
     } on Exception catch (exception) {
       safePrint(exception.toString());
       return Left(ServerFailure());

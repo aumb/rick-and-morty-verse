@@ -5,12 +5,12 @@ import 'package:rick_and_morty_verse/core/models/failure.dart';
 import 'package:rick_and_morty_verse/core/utils/gql_query.dart';
 import 'package:rick_and_morty_verse/core/utils/safe_print.dart';
 
-abstract class CharacterRepositoryContract {
+abstract class CharactersRepositoryContract {
   Future<Either<Failure, List<Character?>>> getCharacters(int page);
 }
 
-class CharacterRepository implements CharacterRepositoryContract {
-  const CharacterRepository(this._client);
+class CharactersRepository implements CharactersRepositoryContract {
+  CharactersRepository(this._client);
 
   final GraphQLClient _client;
 
@@ -23,10 +23,6 @@ class CharacterRepository implements CharacterRepositoryContract {
           variables: {'page': page},
         ),
       );
-      if (result.hasException) {
-        safePrint(result.exception.toString());
-        return Left(ServerFailure());
-      }
       if (result.data == null) {
         return const Right([]);
       }

@@ -18,9 +18,10 @@ class HeaderTextWidget extends StatelessWidget {
         left: 16,
         bottom: 16,
       ),
+      bottom: false,
       child: Text(
         text,
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.headline4,
       ),
     );
   }

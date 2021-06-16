@@ -27,6 +27,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.select((HomeBloc c) => c.state);
     return Scaffold(
+      extendBody: true,
       body: _getScreenFromIndex(state.selectedIndex),
       bottomNavigationBar: CustomNavBar(
           index: state.selectedIndex,

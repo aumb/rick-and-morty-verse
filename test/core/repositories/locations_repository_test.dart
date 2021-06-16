@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rick_and_morty_verse/core/models/character/character.dart';
 import 'package:rick_and_morty_verse/core/models/failure.dart';
-import 'package:rick_and_morty_verse/core/repositories/character_repository.dart';
+import 'package:rick_and_morty_verse/core/models/location/location.dart';
+import 'package:rick_and_morty_verse/core/repositories/locations_repository.dart';
 
 import '../../fixtures/fixture_reader.dart';
 
@@ -13,11 +13,11 @@ class MockGraphQlClient extends Mock implements GraphQLClient {}
 class QueryOptionsFake extends Fake implements QueryOptions {}
 
 void main() {
-  late CharacterRepository repository;
+  late RMLocationsRepository repository;
   late MockGraphQlClient mockGraphQlClient;
 
-  final tCharacters =
-      Character.fromJsonList(jsonDecode(fixture('characters.json')));
+  final tLocations =
+      RMLocation.fromJsonList(jsonDecode(fixture('locations.json')));
 
   setUpAll(() {
     registerFallbackValue(QueryOptionsFake());
@@ -25,14 +25,14 @@ void main() {
 
   setUp(() {
     mockGraphQlClient = MockGraphQlClient();
-    repository = CharacterRepository(mockGraphQlClient);
+    repository = RMLocationsRepository(mockGraphQlClient);
   });
 
   void setupSuccessResponse() {
     when(() => mockGraphQlClient.query(any())).thenAnswer(
       (_) async => QueryResult(
         source: QueryResultSource.network,
-        data: jsonDecode(fixture('characters_pagination.json')),
+        data: jsonDecode(fixture('locations_pagination.json')),
       ),
     );
   }
@@ -59,24 +59,24 @@ void main() {
     );
   }
 
-  group('getCharacters', () {
-    test('should return a list of characters if response is successfull',
+  group('getEpisodes', () {
+    test('should return a list of locations if response is successfull',
         () async {
       setupSuccessResponse();
 
-      final result = await repository.getCharacters(1);
+      final result = await repository.getLocations(1);
 
       final foldedList = [];
 
       result.fold((l) => null, foldedList.addAll);
 
-      expect(foldedList, equals(tCharacters));
+      expect(foldedList, equals(tLocations));
     });
 
     test('should return an empty list if data is null', () async {
       setupNullResponse();
 
-      final result = await repository.getCharacters(1);
+      final result = await repository.getLocations(1);
 
       final foldedList = [];
 
@@ -89,22 +89,22 @@ void main() {
       setupErrorResponse();
       dynamic failure;
 
-      final result = await repository.getCharacters(1);
+      final result = await repository.getLocations(1);
 
       result.fold((l) => failure = l, (r) => null);
 
       expect(failure, isA<ServerFailure>());
     });
-  });
 
-  test('should return a server failure if response has exception', () async {
-    setupExceptionResponse();
-    dynamic failure;
+    test('should return a server failure if response has exception', () async {
+      setupExceptionResponse();
+      dynamic failure;
 
-    final result = await repository.getCharacters(1);
+      final result = await repository.getLocations(1);
 
-    result.fold((l) => failure = l, (r) => null);
+      result.fold((l) => failure = l, (r) => null);
 
-    expect(failure, isA<ServerFailure>());
+      expect(failure, isA<ServerFailure>());
+    });
   });
 }
