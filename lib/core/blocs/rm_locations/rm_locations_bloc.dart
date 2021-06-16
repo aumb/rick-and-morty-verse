@@ -13,7 +13,5 @@ class RmLocationsBloc extends Bloc<RmLocationsEvent, RmLocationsState> {
   @override
   Stream<RmLocationsState> mapEventToState(
     RmLocationsEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
-  }
+  ) async* {}
 }
