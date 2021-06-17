@@ -1,4 +1,3 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
@@ -22,13 +21,14 @@ class _$EpisodeTearOff {
   const _$EpisodeTearOff();
 
   _Episode call(
-      {required int? id,
+      {required String? id,
       required String? name,
       @JsonKey(name: 'air_date') required String? airDate,
       required String? episode,
       required List<Character?>? characters,
       required String? url,
-      required DateTime? created}) {
+      required DateTime? created,
+      required String? image}) {
     return _Episode(
       id: id,
       name: name,
@@ -37,6 +37,7 @@ class _$EpisodeTearOff {
       characters: characters,
       url: url,
       created: created,
+      image: image,
     );
   }
 
@@ -50,7 +51,7 @@ const $Episode = _$EpisodeTearOff();
 
 /// @nodoc
 mixin _$Episode {
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'air_date')
   String? get airDate => throw _privateConstructorUsedError;
@@ -58,6 +59,7 @@ mixin _$Episode {
   List<Character?>? get characters => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   DateTime? get created => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,13 +71,14 @@ abstract class $EpisodeCopyWith<$Res> {
   factory $EpisodeCopyWith(Episode value, $Res Function(Episode) then) =
       _$EpisodeCopyWithImpl<$Res>;
   $Res call(
-      {int? id,
+      {String? id,
       String? name,
       @JsonKey(name: 'air_date') String? airDate,
       String? episode,
       List<Character?>? characters,
       String? url,
-      DateTime? created});
+      DateTime? created,
+      String? image});
 }
 
 /// @nodoc
@@ -95,12 +98,13 @@ class _$EpisodeCopyWithImpl<$Res> implements $EpisodeCopyWith<$Res> {
     Object? characters = freezed,
     Object? url = freezed,
     Object? created = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -125,6 +129,10 @@ class _$EpisodeCopyWithImpl<$Res> implements $EpisodeCopyWith<$Res> {
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -135,13 +143,14 @@ abstract class _$EpisodeCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
       __$EpisodeCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? id,
+      {String? id,
       String? name,
       @JsonKey(name: 'air_date') String? airDate,
       String? episode,
       List<Character?>? characters,
       String? url,
-      DateTime? created});
+      DateTime? created,
+      String? image});
 }
 
 /// @nodoc
@@ -162,12 +171,13 @@ class __$EpisodeCopyWithImpl<$Res> extends _$EpisodeCopyWithImpl<$Res>
     Object? characters = freezed,
     Object? url = freezed,
     Object? created = freezed,
+    Object? image = freezed,
   }) {
     return _then(_Episode(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -192,6 +202,10 @@ class __$EpisodeCopyWithImpl<$Res> extends _$EpisodeCopyWithImpl<$Res>
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -206,13 +220,14 @@ class _$_Episode implements _Episode {
       required this.episode,
       required this.characters,
       required this.url,
-      required this.created});
+      required this.created,
+      required this.image});
 
   factory _$_Episode.fromJson(Map<String, dynamic> json) =>
       _$_$_EpisodeFromJson(json);
 
   @override
-  final int? id;
+  final String? id;
   @override
   final String? name;
   @override
@@ -226,10 +241,12 @@ class _$_Episode implements _Episode {
   final String? url;
   @override
   final DateTime? created;
+  @override
+  final String? image;
 
   @override
   String toString() {
-    return 'Episode(id: $id, name: $name, airDate: $airDate, episode: $episode, characters: $characters, url: $url, created: $created)';
+    return 'Episode(id: $id, name: $name, airDate: $airDate, episode: $episode, characters: $characters, url: $url, created: $created, image: $image)';
   }
 
   @override
@@ -252,7 +269,10 @@ class _$_Episode implements _Episode {
             (identical(other.url, url) ||
                 const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.created, created) ||
-                const DeepCollectionEquality().equals(other.created, created)));
+                const DeepCollectionEquality()
+                    .equals(other.created, created)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
   }
 
   @override
@@ -264,7 +284,8 @@ class _$_Episode implements _Episode {
       const DeepCollectionEquality().hash(episode) ^
       const DeepCollectionEquality().hash(characters) ^
       const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(created);
+      const DeepCollectionEquality().hash(created) ^
+      const DeepCollectionEquality().hash(image);
 
   @JsonKey(ignore: true)
   @override
@@ -279,18 +300,19 @@ class _$_Episode implements _Episode {
 
 abstract class _Episode implements Episode {
   const factory _Episode(
-      {required int? id,
+      {required String? id,
       required String? name,
       @JsonKey(name: 'air_date') required String? airDate,
       required String? episode,
       required List<Character?>? characters,
       required String? url,
-      required DateTime? created}) = _$_Episode;
+      required DateTime? created,
+      required String? image}) = _$_Episode;
 
   factory _Episode.fromJson(Map<String, dynamic> json) = _$_Episode.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @override
   String? get name => throw _privateConstructorUsedError;
   @override
@@ -304,6 +326,8 @@ abstract class _Episode implements Episode {
   String? get url => throw _privateConstructorUsedError;
   @override
   DateTime? get created => throw _privateConstructorUsedError;
+  @override
+  String? get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$EpisodeCopyWith<_Episode> get copyWith =>

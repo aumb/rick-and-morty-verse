@@ -1,4 +1,3 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
@@ -22,13 +21,14 @@ class _$RMLocationTearOff {
   const _$RMLocationTearOff();
 
   _RMLocation call(
-      {required int? id,
+      {required String? id,
       required String? name,
       required String? type,
       required String? dimension,
       required List<Character?>? residents,
       required String? url,
-      required DateTime? created}) {
+      required DateTime? created,
+      required String? image}) {
     return _RMLocation(
       id: id,
       name: name,
@@ -37,6 +37,7 @@ class _$RMLocationTearOff {
       residents: residents,
       url: url,
       created: created,
+      image: image,
     );
   }
 
@@ -50,13 +51,14 @@ const $RMLocation = _$RMLocationTearOff();
 
 /// @nodoc
 mixin _$RMLocation {
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   String? get dimension => throw _privateConstructorUsedError;
   List<Character?>? get residents => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   DateTime? get created => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -70,13 +72,14 @@ abstract class $RMLocationCopyWith<$Res> {
           RMLocation value, $Res Function(RMLocation) then) =
       _$RMLocationCopyWithImpl<$Res>;
   $Res call(
-      {int? id,
+      {String? id,
       String? name,
       String? type,
       String? dimension,
       List<Character?>? residents,
       String? url,
-      DateTime? created});
+      DateTime? created,
+      String? image});
 }
 
 /// @nodoc
@@ -96,12 +99,13 @@ class _$RMLocationCopyWithImpl<$Res> implements $RMLocationCopyWith<$Res> {
     Object? residents = freezed,
     Object? url = freezed,
     Object? created = freezed,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -126,6 +130,10 @@ class _$RMLocationCopyWithImpl<$Res> implements $RMLocationCopyWith<$Res> {
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -137,13 +145,14 @@ abstract class _$RMLocationCopyWith<$Res> implements $RMLocationCopyWith<$Res> {
       __$RMLocationCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? id,
+      {String? id,
       String? name,
       String? type,
       String? dimension,
       List<Character?>? residents,
       String? url,
-      DateTime? created});
+      DateTime? created,
+      String? image});
 }
 
 /// @nodoc
@@ -165,12 +174,13 @@ class __$RMLocationCopyWithImpl<$Res> extends _$RMLocationCopyWithImpl<$Res>
     Object? residents = freezed,
     Object? url = freezed,
     Object? created = freezed,
+    Object? image = freezed,
   }) {
     return _then(_RMLocation(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -195,6 +205,10 @@ class __$RMLocationCopyWithImpl<$Res> extends _$RMLocationCopyWithImpl<$Res>
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -209,13 +223,14 @@ class _$_RMLocation implements _RMLocation {
       required this.dimension,
       required this.residents,
       required this.url,
-      required this.created});
+      required this.created,
+      required this.image});
 
   factory _$_RMLocation.fromJson(Map<String, dynamic> json) =>
       _$_$_RMLocationFromJson(json);
 
   @override
-  final int? id;
+  final String? id;
   @override
   final String? name;
   @override
@@ -228,10 +243,12 @@ class _$_RMLocation implements _RMLocation {
   final String? url;
   @override
   final DateTime? created;
+  @override
+  final String? image;
 
   @override
   String toString() {
-    return 'RMLocation(id: $id, name: $name, type: $type, dimension: $dimension, residents: $residents, url: $url, created: $created)';
+    return 'RMLocation(id: $id, name: $name, type: $type, dimension: $dimension, residents: $residents, url: $url, created: $created, image: $image)';
   }
 
   @override
@@ -253,7 +270,10 @@ class _$_RMLocation implements _RMLocation {
             (identical(other.url, url) ||
                 const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.created, created) ||
-                const DeepCollectionEquality().equals(other.created, created)));
+                const DeepCollectionEquality()
+                    .equals(other.created, created)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
   }
 
   @override
@@ -265,7 +285,8 @@ class _$_RMLocation implements _RMLocation {
       const DeepCollectionEquality().hash(dimension) ^
       const DeepCollectionEquality().hash(residents) ^
       const DeepCollectionEquality().hash(url) ^
-      const DeepCollectionEquality().hash(created);
+      const DeepCollectionEquality().hash(created) ^
+      const DeepCollectionEquality().hash(image);
 
   @JsonKey(ignore: true)
   @override
@@ -280,19 +301,20 @@ class _$_RMLocation implements _RMLocation {
 
 abstract class _RMLocation implements RMLocation {
   const factory _RMLocation(
-      {required int? id,
+      {required String? id,
       required String? name,
       required String? type,
       required String? dimension,
       required List<Character?>? residents,
       required String? url,
-      required DateTime? created}) = _$_RMLocation;
+      required DateTime? created,
+      required String? image}) = _$_RMLocation;
 
   factory _RMLocation.fromJson(Map<String, dynamic> json) =
       _$_RMLocation.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   @override
   String? get name => throw _privateConstructorUsedError;
   @override
@@ -305,6 +327,8 @@ abstract class _RMLocation implements RMLocation {
   String? get url => throw _privateConstructorUsedError;
   @override
   DateTime? get created => throw _privateConstructorUsedError;
+  @override
+  String? get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$RMLocationCopyWith<_RMLocation> get copyWith =>

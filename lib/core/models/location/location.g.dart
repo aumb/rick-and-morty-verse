@@ -1,4 +1,3 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'location.dart';
@@ -9,7 +8,7 @@ part of 'location.dart';
 
 _$_RMLocation _$_$_RMLocationFromJson(Map<String, dynamic> json) {
   return _$_RMLocation(
-    id: json['id'] as int?,
+    id: json['id'] as String?,
     name: json['name'] as String?,
     type: json['type'] as String?,
     dimension: json['dimension'] as String?,
@@ -21,6 +20,7 @@ _$_RMLocation _$_$_RMLocationFromJson(Map<String, dynamic> json) {
     created: json['created'] == null
         ? null
         : DateTime.parse(json['created'] as String),
+    image: json['image'] as String?,
   );
 }
 
@@ -33,4 +33,5 @@ Map<String, dynamic> _$_$_RMLocationToJson(_$_RMLocation instance) =>
       'residents': instance.residents,
       'url': instance.url,
       'created': instance.created?.toIso8601String(),
+      'image': instance.image,
     };

@@ -5,15 +5,16 @@ part 'location.freezed.dart';
 part 'location.g.dart';
 
 @freezed
-abstract class RMLocation with _$RMLocation {
+class RMLocation with _$RMLocation {
   const factory RMLocation({
-    required int? id,
+    required String? id,
     required String? name,
     required String? type,
     required String? dimension,
     required List<Character?>? residents,
     required String? url,
     required DateTime? created,
+    required String? image,
   }) = _RMLocation;
 
   factory RMLocation.fromJson(Map<String, dynamic> json) =>
