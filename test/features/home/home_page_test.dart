@@ -9,6 +9,7 @@ import 'package:rick_and_morty_verse/core/blocs/home/home_bloc.dart';
 import 'package:rick_and_morty_verse/core/cubits/theme/theme_cubit.dart';
 import 'package:rick_and_morty_verse/core/repositories/characters_repository.dart';
 import 'package:rick_and_morty_verse/core/repositories/episodes_repository.dart';
+import 'package:rick_and_morty_verse/core/repositories/locations_repository.dart';
 import 'package:rick_and_morty_verse/features/characters/characters_page.dart';
 import 'package:rick_and_morty_verse/features/episodes/episodes_page.dart';
 import 'package:rick_and_morty_verse/features/home/home_page.dart';
@@ -27,11 +28,14 @@ class MockCharactersRepository extends Mock implements CharactersRepository {}
 
 class MockEpisodesRepository extends Mock implements EpisodesRepository {}
 
+class MockRMLocationsRepository extends Mock implements RMLocationsRepository {}
+
 void main() {
   group('Home', () {
     late HomeBloc homeBloc;
     late MockCharactersRepository mockCharactersRepository;
     late MockEpisodesRepository mockEpisodesRepository;
+    late MockRMLocationsRepository mockRMLocationsRepository;
 
     setUp(() {
       initHydratedBloc();
@@ -40,6 +44,7 @@ void main() {
       homeBloc = MockHomeBloc();
       mockCharactersRepository = MockCharactersRepository();
       mockEpisodesRepository = MockEpisodesRepository();
+      mockRMLocationsRepository = MockRMLocationsRepository();
     });
 
     tearDown(() {
@@ -53,6 +58,8 @@ void main() {
               create: (context) => mockCharactersRepository),
           RepositoryProvider<EpisodesRepository>(
               create: (context) => mockEpisodesRepository),
+          RepositoryProvider<RMLocationsRepository>(
+              create: (context) => mockRMLocationsRepository),
         ],
         child: MultiBlocProvider(
           providers: [
@@ -108,6 +115,8 @@ void main() {
       (tester) async {
         when(() => homeBloc.state).thenAnswer(
             (invocation) => const HomeState.navigationScreenChanged(2));
+        when(() => mockRMLocationsRepository.getLocations(any()))
+            .thenAnswer((_) async => const Right([]));
         await setUpHomeView(tester);
         expect(find.byType(LocationsPage), findsOneWidget);
       },

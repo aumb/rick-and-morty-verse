@@ -103,8 +103,6 @@ void main() {
 
         final gesture = await tester.startGesture(const Offset(0.0, 100.0));
         await gesture.moveBy(const Offset(0.0, -400.0));
-        // final gesture = await tester.startGesture(Offset.zero);
-        // await gesture.d(const Offset(0, -600));
         await tester.pump();
         expect(find.byType(EpisodeCard), findsNWidgets(3));
       });

@@ -1,3 +1,4 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
@@ -13,89 +14,92 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$RmLocationsEventTearOff {
-  const _$RmLocationsEventTearOff();
+class _$RMLocationsEventTearOff {
+  const _$RMLocationsEventTearOff();
 
-  _Started started() {
-    return const _Started();
+  _GetLocations getLocations() {
+    return const _GetLocations();
   }
 }
 
 /// @nodoc
-const $RmLocationsEvent = _$RmLocationsEventTearOff();
+const $RMLocationsEvent = _$RMLocationsEventTearOff();
 
 /// @nodoc
-mixin _$RmLocationsEvent {
+mixin _$RMLocationsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getLocations,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetLocations value) getLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetLocations value)? getLocations,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RmLocationsEventCopyWith<$Res> {
-  factory $RmLocationsEventCopyWith(
-          RmLocationsEvent value, $Res Function(RmLocationsEvent) then) =
-      _$RmLocationsEventCopyWithImpl<$Res>;
+abstract class $RMLocationsEventCopyWith<$Res> {
+  factory $RMLocationsEventCopyWith(
+          RMLocationsEvent value, $Res Function(RMLocationsEvent) then) =
+      _$RMLocationsEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RmLocationsEventCopyWithImpl<$Res>
-    implements $RmLocationsEventCopyWith<$Res> {
-  _$RmLocationsEventCopyWithImpl(this._value, this._then);
+class _$RMLocationsEventCopyWithImpl<$Res>
+    implements $RMLocationsEventCopyWith<$Res> {
+  _$RMLocationsEventCopyWithImpl(this._value, this._then);
 
-  final RmLocationsEvent _value;
+  final RMLocationsEvent _value;
   // ignore: unused_field
-  final $Res Function(RmLocationsEvent) _then;
+  final $Res Function(RMLocationsEvent) _then;
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$GetLocationsCopyWith<$Res> {
+  factory _$GetLocationsCopyWith(
+          _GetLocations value, $Res Function(_GetLocations) then) =
+      __$GetLocationsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$RmLocationsEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
+class __$GetLocationsCopyWithImpl<$Res>
+    extends _$RMLocationsEventCopyWithImpl<$Res>
+    implements _$GetLocationsCopyWith<$Res> {
+  __$GetLocationsCopyWithImpl(
+      _GetLocations _value, $Res Function(_GetLocations) _then)
+      : super(_value, (v) => _then(v as _GetLocations));
 
   @override
-  _Started get _value => super._value as _Started;
+  _GetLocations get _value => super._value as _GetLocations;
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_GetLocations implements _GetLocations {
+  const _$_GetLocations();
 
   @override
   String toString() {
-    return 'RmLocationsEvent.started()';
+    return 'RMLocationsEvent.getLocations()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
+    return identical(this, other) || (other is _GetLocations);
   }
 
   @override
@@ -104,19 +108,19 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getLocations,
   }) {
-    return started();
+    return getLocations();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getLocations,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (getLocations != null) {
+      return getLocations();
     }
     return orElse();
   }
@@ -124,81 +128,105 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetLocations value) getLocations,
   }) {
-    return started(this);
+    return getLocations(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetLocations value)? getLocations,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (getLocations != null) {
+      return getLocations(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements RmLocationsEvent {
-  const factory _Started() = _$_Started;
+abstract class _GetLocations implements RMLocationsEvent {
+  const factory _GetLocations() = _$_GetLocations;
 }
 
 /// @nodoc
-class _$RmLocationsStateTearOff {
-  const _$RmLocationsStateTearOff();
+class _$RMLocationsStateTearOff {
+  const _$RMLocationsStateTearOff();
 
   _Initial initial() {
     return const _Initial();
   }
+
+  _Loading loading() {
+    return const _Loading();
+  }
+
+  _Loaded loaded() {
+    return const _Loaded();
+  }
+
+  _Error error() {
+    return const _Error();
+  }
 }
 
 /// @nodoc
-const $RmLocationsState = _$RmLocationsStateTearOff();
+const $RMLocationsState = _$RMLocationsStateTearOff();
 
 /// @nodoc
-mixin _$RmLocationsState {
+mixin _$RMLocationsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RmLocationsStateCopyWith<$Res> {
-  factory $RmLocationsStateCopyWith(
-          RmLocationsState value, $Res Function(RmLocationsState) then) =
-      _$RmLocationsStateCopyWithImpl<$Res>;
+abstract class $RMLocationsStateCopyWith<$Res> {
+  factory $RMLocationsStateCopyWith(
+          RMLocationsState value, $Res Function(RMLocationsState) then) =
+      _$RMLocationsStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RmLocationsStateCopyWithImpl<$Res>
-    implements $RmLocationsStateCopyWith<$Res> {
-  _$RmLocationsStateCopyWithImpl(this._value, this._then);
+class _$RMLocationsStateCopyWithImpl<$Res>
+    implements $RMLocationsStateCopyWith<$Res> {
+  _$RMLocationsStateCopyWithImpl(this._value, this._then);
 
-  final RmLocationsState _value;
+  final RMLocationsState _value;
   // ignore: unused_field
-  final $Res Function(RmLocationsState) _then;
+  final $Res Function(RMLocationsState) _then;
 }
 
 /// @nodoc
@@ -208,7 +236,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$RmLocationsStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$RMLocationsStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -224,7 +252,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'RmLocationsState.initial()';
+    return 'RMLocationsState.initial()';
   }
 
   @override
@@ -239,6 +267,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -247,6 +278,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -259,6 +293,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) {
     return initial(this);
   }
@@ -267,6 +304,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -276,6 +316,279 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements RmLocationsState {
+abstract class _Initial implements RMLocationsState {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingCopyWithImpl<$Res> extends _$RMLocationsStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
+
+  @override
+  _Loading get _value => super._value as _Loading;
+}
+
+/// @nodoc
+
+class _$_Loading implements _Loading {
+  const _$_Loading();
+
+  @override
+  String toString() {
+    return 'RMLocationsState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements RMLocationsState {
+  const factory _Loading() = _$_Loading;
+}
+
+/// @nodoc
+abstract class _$LoadedCopyWith<$Res> {
+  factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
+      __$LoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadedCopyWithImpl<$Res> extends _$RMLocationsStateCopyWithImpl<$Res>
+    implements _$LoadedCopyWith<$Res> {
+  __$LoadedCopyWithImpl(_Loaded _value, $Res Function(_Loaded) _then)
+      : super(_value, (v) => _then(v as _Loaded));
+
+  @override
+  _Loaded get _value => super._value as _Loaded;
+}
+
+/// @nodoc
+
+class _$_Loaded implements _Loaded {
+  const _$_Loaded();
+
+  @override
+  String toString() {
+    return 'RMLocationsState.loaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Loaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+  }) {
+    return loaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loaded implements RMLocationsState {
+  const factory _Loaded() = _$_Loaded;
+}
+
+/// @nodoc
+abstract class _$ErrorCopyWith<$Res> {
+  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
+      __$ErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ErrorCopyWithImpl<$Res> extends _$RMLocationsStateCopyWithImpl<$Res>
+    implements _$ErrorCopyWith<$Res> {
+  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
+      : super(_value, (v) => _then(v as _Error));
+
+  @override
+  _Error get _value => super._value as _Error;
+}
+
+/// @nodoc
+
+class _$_Error implements _Error {
+  const _$_Error();
+
+  @override
+  String toString() {
+    return 'RMLocationsState.error()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Error);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+  }) {
+    return error();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Error implements RMLocationsState {
+  const factory _Error() = _$_Error;
 }

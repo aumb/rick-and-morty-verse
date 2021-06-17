@@ -1,6 +1,12 @@
 part of 'rm_locations_bloc.dart';
 
 @freezed
-class RmLocationsState with _$RmLocationsState {
-  const factory RmLocationsState.initial() = _Initial;
+class RMLocationsState with _$RMLocationsState {
+  const factory RMLocationsState.initial() = _Initial;
+
+  const factory RMLocationsState.loading() = _Loading;
+
+  const factory RMLocationsState.loaded() = _Loaded;
+
+  const factory RMLocationsState.error() = _Error;
 }

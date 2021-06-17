@@ -63,5 +63,13 @@
     "firstSeenIn": "First seen in:",
     "@firstSeenIn": {
         "description": "Text shown as the title of first episode character appeared in"
+    },
+    "dimension": "Dimension:",
+    "@dimension": {
+        "description": "Text shown as the title of the location's dimension"
+    },
+    "locationType": "Location type:",
+    "@locationType": {
+        "description": "Text shown as the title of the location type"
     }
 }

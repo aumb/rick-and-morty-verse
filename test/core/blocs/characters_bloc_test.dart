@@ -33,7 +33,7 @@ void main() {
     bloc.close();
   });
 
-  group('HomeBloc', () {
+  group('CharactersBloc', () {
     test('initial state is CharactersState.initial()', () {
       expect(bloc.state, equals(const CharactersState.initial()));
     });
