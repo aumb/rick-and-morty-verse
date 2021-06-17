@@ -6,6 +6,7 @@ class PageSkeleton extends StatelessWidget {
     Key? key,
     required this.title,
     required this.body,
+    this.shouldAddBottomSpace = false,
     this.controller,
   })  : assert(body is SingleChildRenderObjectWidget ||
             body is SliverMultiBoxAdaptorWidget ||
@@ -15,6 +16,7 @@ class PageSkeleton extends StatelessWidget {
   final String title;
   final Widget body;
   final ScrollController? controller;
+  final bool shouldAddBottomSpace;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,12 @@ class PageSkeleton extends StatelessWidget {
           ),
         ),
         body,
+        if (shouldAddBottomSpace)
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: MediaQuery.of(context).padding.bottom,
+            ),
+          )
       ],
     );
   }

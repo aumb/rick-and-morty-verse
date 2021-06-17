@@ -91,9 +91,8 @@ void main() {
         when((() => mockCharactersBloc.characters)).thenReturn(tCharacters);
         await setupCharactersView(tester);
 
-        final gesture = await tester
-            .startGesture(const Offset(0, 300)); //Position of the scrollview
-        await gesture.moveBy(const Offset(0, -300));
+        final gesture = await tester.startGesture(const Offset(0, 300));
+        await gesture.moveBy(const Offset(0, -700));
         await tester.pump();
         expect(find.byType(CircularProgressIndicator), findsOneWidget);
       });
@@ -104,9 +103,8 @@ void main() {
         when((() => mockCharactersBloc.characters)).thenReturn(tCharacters);
         await setupCharactersView(tester);
 
-        final gesture = await tester
-            .startGesture(const Offset(0, 300)); //Position of the scrollview
-        await gesture.moveBy(const Offset(0, -300));
+        final gesture = await tester.startGesture(Offset.zero);
+        await gesture.moveBy(const Offset(0, -500));
         await tester.pump();
         expect(find.byType(CharacterCard), findsNWidgets(3));
       });

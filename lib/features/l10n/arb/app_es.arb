@@ -51,5 +51,17 @@
     "unknown": "Unknown",
     "@unkown": {
         "description": "Text shown as the label texts CharacterStatusEnum Unknown"
+    },
+    "airedOn": "Aired on:",
+    "@airedOn": {
+        "description": "Text shown as the title of air date "
+    },
+    "lastKnownLocation": "Last known location:",
+    "@lastKnownLocation": {
+        "description": "Text shown as the title of location name"
+    },
+    "firstSeenIn": "First seen in:",
+    "@firstSeenIn": {
+        "description": "Text shown as the title of first episode character appeared in"
     }
 }

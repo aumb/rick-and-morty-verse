@@ -13,88 +13,91 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$EpisodeEventTearOff {
-  const _$EpisodeEventTearOff();
+class _$EpisodesEventTearOff {
+  const _$EpisodesEventTearOff();
 
-  _Started started() {
-    return const _Started();
+  _GetEpisodes getEpisodes() {
+    return const _GetEpisodes();
   }
 }
 
 /// @nodoc
-const $EpisodeEvent = _$EpisodeEventTearOff();
+const $EpisodesEvent = _$EpisodesEventTearOff();
 
 /// @nodoc
-mixin _$EpisodeEvent {
+mixin _$EpisodesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getEpisodes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getEpisodes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetEpisodes value) getEpisodes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetEpisodes value)? getEpisodes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EpisodeEventCopyWith<$Res> {
-  factory $EpisodeEventCopyWith(
-          EpisodeEvent value, $Res Function(EpisodeEvent) then) =
-      _$EpisodeEventCopyWithImpl<$Res>;
+abstract class $EpisodesEventCopyWith<$Res> {
+  factory $EpisodesEventCopyWith(
+          EpisodesEvent value, $Res Function(EpisodesEvent) then) =
+      _$EpisodesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EpisodeEventCopyWithImpl<$Res> implements $EpisodeEventCopyWith<$Res> {
-  _$EpisodeEventCopyWithImpl(this._value, this._then);
+class _$EpisodesEventCopyWithImpl<$Res>
+    implements $EpisodesEventCopyWith<$Res> {
+  _$EpisodesEventCopyWithImpl(this._value, this._then);
 
-  final EpisodeEvent _value;
+  final EpisodesEvent _value;
   // ignore: unused_field
-  final $Res Function(EpisodeEvent) _then;
+  final $Res Function(EpisodesEvent) _then;
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$GetEpisodesCopyWith<$Res> {
+  factory _$GetEpisodesCopyWith(
+          _GetEpisodes value, $Res Function(_GetEpisodes) then) =
+      __$GetEpisodesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$EpisodeEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
+class __$GetEpisodesCopyWithImpl<$Res> extends _$EpisodesEventCopyWithImpl<$Res>
+    implements _$GetEpisodesCopyWith<$Res> {
+  __$GetEpisodesCopyWithImpl(
+      _GetEpisodes _value, $Res Function(_GetEpisodes) _then)
+      : super(_value, (v) => _then(v as _GetEpisodes));
 
   @override
-  _Started get _value => super._value as _Started;
+  _GetEpisodes get _value => super._value as _GetEpisodes;
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_GetEpisodes implements _GetEpisodes {
+  const _$_GetEpisodes();
 
   @override
   String toString() {
-    return 'EpisodeEvent.started()';
+    return 'EpisodesEvent.getEpisodes()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
+    return identical(this, other) || (other is _GetEpisodes);
   }
 
   @override
@@ -103,19 +106,19 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function() getEpisodes,
   }) {
-    return started();
+    return getEpisodes();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function()? getEpisodes,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (getEpisodes != null) {
+      return getEpisodes();
     }
     return orElse();
   }
@@ -123,80 +126,105 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetEpisodes value) getEpisodes,
   }) {
-    return started(this);
+    return getEpisodes(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetEpisodes value)? getEpisodes,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (getEpisodes != null) {
+      return getEpisodes(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements EpisodeEvent {
-  const factory _Started() = _$_Started;
+abstract class _GetEpisodes implements EpisodesEvent {
+  const factory _GetEpisodes() = _$_GetEpisodes;
 }
 
 /// @nodoc
-class _$EpisodeStateTearOff {
-  const _$EpisodeStateTearOff();
+class _$EpisodesStateTearOff {
+  const _$EpisodesStateTearOff();
 
   _Initial initial() {
     return const _Initial();
   }
+
+  _Loading loading() {
+    return const _Loading();
+  }
+
+  _Loaded loaded() {
+    return const _Loaded();
+  }
+
+  _Error error() {
+    return const _Error();
+  }
 }
 
 /// @nodoc
-const $EpisodeState = _$EpisodeStateTearOff();
+const $EpisodesState = _$EpisodesStateTearOff();
 
 /// @nodoc
-mixin _$EpisodeState {
+mixin _$EpisodesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EpisodeStateCopyWith<$Res> {
-  factory $EpisodeStateCopyWith(
-          EpisodeState value, $Res Function(EpisodeState) then) =
-      _$EpisodeStateCopyWithImpl<$Res>;
+abstract class $EpisodesStateCopyWith<$Res> {
+  factory $EpisodesStateCopyWith(
+          EpisodesState value, $Res Function(EpisodesState) then) =
+      _$EpisodesStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$EpisodeStateCopyWithImpl<$Res> implements $EpisodeStateCopyWith<$Res> {
-  _$EpisodeStateCopyWithImpl(this._value, this._then);
+class _$EpisodesStateCopyWithImpl<$Res>
+    implements $EpisodesStateCopyWith<$Res> {
+  _$EpisodesStateCopyWithImpl(this._value, this._then);
 
-  final EpisodeState _value;
+  final EpisodesState _value;
   // ignore: unused_field
-  final $Res Function(EpisodeState) _then;
+  final $Res Function(EpisodesState) _then;
 }
 
 /// @nodoc
@@ -206,7 +234,7 @@ abstract class _$InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$EpisodeStateCopyWithImpl<$Res>
+class __$InitialCopyWithImpl<$Res> extends _$EpisodesStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
       : super(_value, (v) => _then(v as _Initial));
@@ -222,7 +250,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'EpisodeState.initial()';
+    return 'EpisodesState.initial()';
   }
 
   @override
@@ -237,6 +265,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
   }) {
     return initial();
   }
@@ -245,6 +276,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -257,6 +291,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
   }) {
     return initial(this);
   }
@@ -265,6 +302,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -274,6 +314,279 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements EpisodeState {
+abstract class _Initial implements EpisodesState {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingCopyWithImpl<$Res> extends _$EpisodesStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
+
+  @override
+  _Loading get _value => super._value as _Loading;
+}
+
+/// @nodoc
+
+class _$_Loading implements _Loading {
+  const _$_Loading();
+
+  @override
+  String toString() {
+    return 'EpisodesState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements EpisodesState {
+  const factory _Loading() = _$_Loading;
+}
+
+/// @nodoc
+abstract class _$LoadedCopyWith<$Res> {
+  factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
+      __$LoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadedCopyWithImpl<$Res> extends _$EpisodesStateCopyWithImpl<$Res>
+    implements _$LoadedCopyWith<$Res> {
+  __$LoadedCopyWithImpl(_Loaded _value, $Res Function(_Loaded) _then)
+      : super(_value, (v) => _then(v as _Loaded));
+
+  @override
+  _Loaded get _value => super._value as _Loaded;
+}
+
+/// @nodoc
+
+class _$_Loaded implements _Loaded {
+  const _$_Loaded();
+
+  @override
+  String toString() {
+    return 'EpisodesState.loaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Loaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+  }) {
+    return loaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+  }) {
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loaded implements EpisodesState {
+  const factory _Loaded() = _$_Loaded;
+}
+
+/// @nodoc
+abstract class _$ErrorCopyWith<$Res> {
+  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
+      __$ErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ErrorCopyWithImpl<$Res> extends _$EpisodesStateCopyWithImpl<$Res>
+    implements _$ErrorCopyWith<$Res> {
+  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
+      : super(_value, (v) => _then(v as _Error));
+
+  @override
+  _Error get _value => super._value as _Error;
+}
+
+/// @nodoc
+
+class _$_Error implements _Error {
+  const _$_Error();
+
+  @override
+  String toString() {
+    return 'EpisodesState.error()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Error);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+  }) {
+    return error();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Error implements EpisodesState {
+  const factory _Error() = _$_Error;
 }

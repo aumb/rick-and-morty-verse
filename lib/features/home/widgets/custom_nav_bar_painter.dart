@@ -23,7 +23,7 @@ class CustomNavBarPainter extends CustomPainter {
       ..lineTo(0, size.height)
       ..lineTo(0, 20);
     canvas
-      ..drawShadow(path, Colors.green, 5, true)
+      ..drawShadow(path, Colors.black, 5, true)
       ..drawPath(path, paint);
   }
 

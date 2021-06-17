@@ -44,6 +44,7 @@ class ListPageSkeleton<T> extends StatelessWidget {
                 childCount: items.length,
               ),
             ),
+      shouldAddBottomSpace: !isInitialLoad && items.isNotEmpty,
     );
   }
 }

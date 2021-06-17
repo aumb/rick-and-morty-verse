@@ -11,41 +11,43 @@ class CardImage extends StatelessWidget {
 
   final String url;
 
+  BorderRadius get _borderRadius => const BorderRadius.only(
+        topRight: Radius.circular(14),
+        topLeft: Radius.circular(14),
+      );
+
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final intendedHeight = height * 0.3;
     return CachedNetworkImage(
-      imageUrl: url,
-      imageBuilder: (context, imageProvider) => Container(
-        height: MediaQuery.of(context).size.height * 0.3,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(14),
-            topLeft: Radius.circular(14),
-          ),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: imageProvider,
-          ),
-        ),
+        imageUrl: url,
+        imageBuilder: (context, imageProvider) => Container(
+              height: intendedHeight,
+              decoration: BoxDecoration(
+                borderRadius: _borderRadius,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: imageProvider,
+                ),
+              ),
+            ),
+        placeholder: (context, url) => _buildPlaceholder(intendedHeight),
+        errorWidget: (context, url, error) =>
+            _buildErrorWidget(intendedHeight));
+  }
+
+  Container _buildPlaceholder(double height) {
+    return Container(
+      height: height,
+      decoration: BoxDecoration(
+        borderRadius: _borderRadius,
       ),
-      placeholder: (context, url) => Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(14),
-            topLeft: Radius.circular(14),
-          ),
-        ),
-        child: const Icon(Icons.image),
-      ),
-      errorWidget: (context, url, error) => Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(14),
-            topLeft: Radius.circular(14),
-          ),
-        ),
-        child: const Icon(Icons.image),
-      ),
+      child: const Icon(Icons.image),
     );
+  }
+
+  Container _buildErrorWidget(double height) {
+    return _buildPlaceholder(height);
   }
 }

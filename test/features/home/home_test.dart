@@ -8,6 +8,7 @@ import 'package:rick_and_morty_verse/components/empty_page.dart';
 import 'package:rick_and_morty_verse/core/blocs/home/home_bloc.dart';
 import 'package:rick_and_morty_verse/core/cubits/theme/theme_cubit.dart';
 import 'package:rick_and_morty_verse/core/repositories/characters_repository.dart';
+import 'package:rick_and_morty_verse/core/repositories/episodes_repository.dart';
 import 'package:rick_and_morty_verse/features/characters/characters_page.dart';
 import 'package:rick_and_morty_verse/features/episodes/episodes_page.dart';
 import 'package:rick_and_morty_verse/features/home/home_page.dart';
@@ -24,10 +25,13 @@ class MockHomeBloc extends MockBloc<HomeEvent, HomeState> implements HomeBloc {}
 
 class MockCharactersRepository extends Mock implements CharactersRepository {}
 
+class MockEpisodesRepository extends Mock implements EpisodesRepository {}
+
 void main() {
   group('Home', () {
     late HomeBloc homeBloc;
     late MockCharactersRepository mockCharactersRepository;
+    late MockEpisodesRepository mockEpisodesRepository;
 
     setUp(() {
       initHydratedBloc();
@@ -35,6 +39,7 @@ void main() {
       registerFallbackValue<HomeEvent>(HomeEventFake());
       homeBloc = MockHomeBloc();
       mockCharactersRepository = MockCharactersRepository();
+      mockEpisodesRepository = MockEpisodesRepository();
     });
 
     tearDown(() {
@@ -46,6 +51,8 @@ void main() {
         providers: [
           RepositoryProvider<CharactersRepository>(
               create: (context) => mockCharactersRepository),
+          RepositoryProvider<EpisodesRepository>(
+              create: (context) => mockEpisodesRepository),
         ],
         child: MultiBlocProvider(
           providers: [
@@ -90,7 +97,8 @@ void main() {
       (tester) async {
         when(() => homeBloc.state).thenAnswer(
             (invocation) => const HomeState.navigationScreenChanged(1));
-
+        when(() => mockEpisodesRepository.getEpisodes(any()))
+            .thenAnswer((_) async => const Right([]));
         await setUpHomeView(tester);
         expect(find.byType(EpisodesPage), findsOneWidget);
       },
