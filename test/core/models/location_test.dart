@@ -7,13 +7,14 @@ import '../../fixtures/fixture_reader.dart';
 
 void main() {
   final tLocationModel = RMLocation(
-    id: 1,
+    id: '1',
     name: 'Earth (C-137)',
     url: 'https://rickandmortyapi.com/api/location/1',
     created: DateTime.tryParse('2017-11-10T12:42:04.162Z'),
     residents: [],
     dimension: 'Dimension C-137',
     type: 'Planet',
+    image: null,
   );
 
   final tLocationList = List.generate(3, (index) => tLocationModel);

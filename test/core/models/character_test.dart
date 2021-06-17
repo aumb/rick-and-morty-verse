@@ -23,6 +23,7 @@ void main() {
       residents: null,
       dimension: null,
       created: null,
+      image: null,
     ),
     location: const RMLocation(
       name: 'Earth (C-137)',
@@ -32,6 +33,7 @@ void main() {
       residents: null,
       dimension: null,
       created: null,
+      image: null,
     ),
     image: 'https://rickandmortyapi.com/api/character/avatar/38.jpeg',
     url: 'https://rickandmortyapi.com/api/character/38',

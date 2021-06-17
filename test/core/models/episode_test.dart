@@ -9,7 +9,7 @@ import '../../fixtures/fixture_reader.dart';
 
 void main() {
   final tEpisodeModel = Episode(
-    id: 1,
+    id: '1',
     name: 'Pilot',
     airDate: 'December 2, 2013',
     episode: 'S01E01',
@@ -31,6 +31,7 @@ void main() {
     ],
     url: 'https://rickandmortyapi.com/api/episode/1',
     created: DateTime.tryParse('2017-11-10T12:56:33.798Z'),
+    image: null,
   );
 
   final tEpisodeList = List.generate(3, (index) => tEpisodeModel);
