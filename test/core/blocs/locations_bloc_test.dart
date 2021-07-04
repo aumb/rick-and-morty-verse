@@ -25,8 +25,12 @@ void main() {
   });
 
   void setUpSuccessfullResponse() {
-    when(() => mockRMLocationsRepository.getLocations(any()))
-        .thenAnswer((_) async => Right(tRMLocations));
+    when(
+      () => mockRMLocationsRepository.getLocations(
+        any(),
+        query: any(named: 'query'),
+      ),
+    ).thenAnswer((_) async => Right(tRMLocations));
   }
 
   tearDown(() {
@@ -91,6 +95,94 @@ void main() {
           expect(bloc.canGetMore, equals(false));
           return [
             const RMLocationsState.loading(),
+            const RMLocationsState.loaded()
+          ];
+        },
+      );
+    });
+    group('RMLocationsEvent.searchRMLocations', () {
+      blocTest<RMLocationsBloc, RMLocationsState>(
+        '''emits RMLocationsState.loading() RMLocationsState.loaded() when 
+        event is called''',
+        build: () {
+          setUpSuccessfullResponse();
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const RMLocationsEvent.searchLocations(query: ''),
+        ),
+        expect: () {
+          expect(bloc.locations.length, equals(tRMLocations.length));
+          return [
+            const RMLocationsState.loading(),
+            const RMLocationsState.loaded()
+          ];
+        },
+      );
+
+      blocTest<RMLocationsBloc, RMLocationsState>(
+        '''should emit RMLocationsState.empty() when list is empty''',
+        build: () {
+          when(
+            () => mockRMLocationsRepository.getLocations(
+              any(),
+              query: any(named: 'query'),
+            ),
+          ).thenAnswer((_) async => const Right([]));
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const RMLocationsEvent.searchLocations(query: ''),
+        ),
+        expect: () {
+          return [
+            const RMLocationsState.loading(),
+            const RMLocationsState.empty()
+          ];
+        },
+      );
+    });
+
+    group('RMLocationsEvent.searchMoreRMLocations', () {
+      blocTest<RMLocationsBloc, RMLocationsState>(
+        '''emits RMLocationsState.loading() RMLocationsState.loaded() when 
+        event is called''',
+        build: () {
+          setUpSuccessfullResponse();
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const RMLocationsEvent.searchMoreLocations(query: ''),
+        ),
+        expect: () {
+          expect(bloc.locations.length, equals(tRMLocations.length));
+          return [
+            const RMLocationsState.loadingMore(),
+            const RMLocationsState.loaded()
+          ];
+        },
+      );
+
+      blocTest<RMLocationsBloc, RMLocationsState>(
+        '''should change canGetMore to false when list is empty''',
+        build: () {
+          when(
+            () => mockRMLocationsRepository.getLocations(
+              any(),
+              query: any(named: 'query'),
+            ),
+          ).thenAnswer((_) async => const Right([]));
+          bloc.emit(const RMLocationsState.loaded());
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const RMLocationsEvent.searchMoreLocations(query: ''),
+        ),
+        expect: () {
+          expect(bloc.locations.length, equals(0));
+          expect(bloc.canGetMore, equals(false));
+          return [
+            const RMLocationsState.loadingMore(),
             const RMLocationsState.loaded()
           ];
         },

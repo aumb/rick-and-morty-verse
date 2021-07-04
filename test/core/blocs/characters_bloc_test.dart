@@ -25,8 +25,12 @@ void main() {
   });
 
   void setUpSuccessfullResponse() {
-    when(() => mockCharactersRepository.getCharacters(any()))
-        .thenAnswer((_) async => Right(tCharacters));
+    when(
+      () => mockCharactersRepository.getCharacters(
+        any(),
+        query: any(named: 'query'),
+      ),
+    ).thenAnswer((_) async => Right(tCharacters));
   }
 
   tearDown(() {
@@ -57,7 +61,7 @@ void main() {
 
       blocTest<CharactersBloc, CharactersState>(
         '''emits CharactersState.loading() CharactersState.loaded() when 
-        event is called first time''',
+        event is called''',
         build: () {
           setUpSuccessfullResponse();
           bloc.emit(const CharactersState.loaded());
@@ -91,6 +95,95 @@ void main() {
           expect(bloc.canGetMore, equals(false));
           return [
             const CharactersState.loading(),
+            const CharactersState.loaded()
+          ];
+        },
+      );
+    });
+
+    group('CharactersEvent.searchCharacters', () {
+      blocTest<CharactersBloc, CharactersState>(
+        '''emits CharactersState.loading() CharactersState.loaded() when 
+        event is called''',
+        build: () {
+          setUpSuccessfullResponse();
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const CharactersEvent.searchCharacters(query: ''),
+        ),
+        expect: () {
+          expect(bloc.characters.length, equals(tCharacters.length));
+          return [
+            const CharactersState.loading(),
+            const CharactersState.loaded()
+          ];
+        },
+      );
+
+      blocTest<CharactersBloc, CharactersState>(
+        '''should emit CharactersState.empty() when list is empty''',
+        build: () {
+          when(
+            () => mockCharactersRepository.getCharacters(
+              any(),
+              query: any(named: 'query'),
+            ),
+          ).thenAnswer((_) async => const Right([]));
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const CharactersEvent.searchCharacters(query: ''),
+        ),
+        expect: () {
+          return [
+            const CharactersState.loading(),
+            const CharactersState.empty()
+          ];
+        },
+      );
+    });
+
+    group('CharactersEvent.searchMoreCharacters', () {
+      blocTest<CharactersBloc, CharactersState>(
+        '''emits CharactersState.loading() CharactersState.loaded() when 
+        event is called''',
+        build: () {
+          setUpSuccessfullResponse();
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const CharactersEvent.searchMoreCharacters(query: ''),
+        ),
+        expect: () {
+          expect(bloc.characters.length, equals(tCharacters.length));
+          return [
+            const CharactersState.loadingMore(),
+            const CharactersState.loaded()
+          ];
+        },
+      );
+
+      blocTest<CharactersBloc, CharactersState>(
+        '''should change canGetMore to false when list is empty''',
+        build: () {
+          when(
+            () => mockCharactersRepository.getCharacters(
+              any(),
+              query: any(named: 'query'),
+            ),
+          ).thenAnswer((_) async => const Right([]));
+          bloc.emit(const CharactersState.loaded());
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const CharactersEvent.searchMoreCharacters(query: ''),
+        ),
+        expect: () {
+          expect(bloc.characters.length, equals(0));
+          expect(bloc.canGetMore, equals(false));
+          return [
+            const CharactersState.loadingMore(),
             const CharactersState.loaded()
           ];
         },

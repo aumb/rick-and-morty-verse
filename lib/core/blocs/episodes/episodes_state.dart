@@ -9,4 +9,8 @@ class EpisodesState with _$EpisodesState {
   const factory EpisodesState.loaded() = _Loaded;
 
   const factory EpisodesState.error() = _Error;
+
+  const factory EpisodesState.loadingMore() = _LoadingMore;
+
+  const factory EpisodesState.empty() = _Empty;
 }

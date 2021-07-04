@@ -19,19 +19,28 @@ class ThemeUtils {
     pageTransitionsTheme: _pageTransitionsTheme,
     textTheme: GoogleFonts.concertOneTextTheme(ThemeData.light().textTheme),
     bottomAppBarColor: ColorUtils.lightBottomAppBarColor,
+    tabBarTheme: TabBarTheme(
+      labelStyle: GoogleFonts.concertOne(),
+      unselectedLabelStyle: GoogleFonts.concertOne(),
+    ),
   );
 
   /// Dark style
   static final ThemeData dark = ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: ColorUtils.darkPrimaryColor,
-      accentColor: ColorUtils.darkAccentColor,
-      canvasColor: ColorUtils.darkCanvasColor,
-      scaffoldBackgroundColor: ColorUtils.darkBackgroundColor,
-      cardColor: ColorUtils.darkCardColor,
-      dividerColor: ColorUtils.darkDividerColor,
-      dialogBackgroundColor: ColorUtils.darkCardColor,
-      pageTransitionsTheme: _pageTransitionsTheme,
-      textTheme: GoogleFonts.concertOneTextTheme(ThemeData.dark().textTheme),
-      bottomAppBarColor: ColorUtils.darkBottomAppBarColor);
+    brightness: Brightness.dark,
+    primaryColor: ColorUtils.darkPrimaryColor,
+    accentColor: ColorUtils.darkAccentColor,
+    canvasColor: ColorUtils.darkCanvasColor,
+    scaffoldBackgroundColor: ColorUtils.darkBackgroundColor,
+    cardColor: ColorUtils.darkCardColor,
+    dividerColor: ColorUtils.darkDividerColor,
+    dialogBackgroundColor: ColorUtils.darkCardColor,
+    pageTransitionsTheme: _pageTransitionsTheme,
+    textTheme: GoogleFonts.concertOneTextTheme(ThemeData.dark().textTheme),
+    bottomAppBarColor: ColorUtils.darkBottomAppBarColor,
+    tabBarTheme: TabBarTheme(
+      labelStyle: GoogleFonts.concertOne(),
+      unselectedLabelStyle: GoogleFonts.concertOne(),
+    ),
+  );
 }

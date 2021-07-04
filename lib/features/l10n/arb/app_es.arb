@@ -71,5 +71,21 @@
     "locationType": "Location type:",
     "@locationType": {
         "description": "Text shown as the title of the location type"
+    },
+    "searchHint": "Search...",
+    "@searchHint": {
+        "description": "Text shown as the label of the search box"
+    },
+    "charactersSearchHint": "Search for a character's name",
+    "@charactersSearchHint": {
+        "description": "Text shown as the intial text of characters search page"
+    },
+    "episodesSearchHint": "Search for an episode's name",
+    "@episodesSearchHint": {
+        "description": "Text shown as the intial text of episodes search page"
+    },
+    "locationsSearchHint": "Search for a location's name",
+    "@locationsSearchHint": {
+        "description": "Text shown as the intial text of locations search page"
     }
 }

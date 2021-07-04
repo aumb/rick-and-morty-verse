@@ -33,21 +33,60 @@ class EpisodesBloc extends Bloc<EpisodesEvent, EpisodesState> {
     if (event is _GetEpisodes) {
       _isGettingItems = true;
       if (state is! _Initial) {
-        yield const EpisodesState.loading();
+        yield const _Loading();
       }
       final result = await _episodesRepository.getEpisodes(page);
       yield* _mapGetEpisodes(result);
+    } else if (event is _SearchEpisodes) {
+      _isGettingItems = true;
+      page = 1;
+      yield const _Loading();
+      final result =
+          await _episodesRepository.getEpisodes(page, query: event.query);
+      yield* _mapSearchEpisodes(result);
+    } else if (event is _SearchMoreEpisodes) {
+      _isGettingItems = true;
+      yield const _LoadingMore();
+      final result =
+          await _episodesRepository.getEpisodes(page, query: event.query);
+      yield* _mapSearchMoreEpisodes(result);
     }
   }
 
   Stream<EpisodesState> _mapGetEpisodes(
       Either<Failure, List<Episode?>> result) async* {
-    yield result.fold((l) => const EpisodesState.error(), (r) {
+    yield result.fold((l) => const _Error(), (r) {
       _hasReachedEnd = r.isEmpty;
       _isGettingItems = false;
       _episodes.addAll(r);
       page++;
-      return const EpisodesState.loaded();
+      return const _Loaded();
+    });
+  }
+
+  Stream<EpisodesState> _mapSearchEpisodes(
+      Either<Failure, List<Episode?>> result) async* {
+    yield result.fold((l) => const _Error(), (r) {
+      _episodes
+        ..clear()
+        ..addAll(r);
+      _isGettingItems = false;
+      page++;
+      if (r.isEmpty) {
+        return const _Empty();
+      }
+      return const _Loaded();
+    });
+  }
+
+  Stream<EpisodesState> _mapSearchMoreEpisodes(
+      Either<Failure, List<Episode?>> result) async* {
+    yield result.fold((l) => const _Error(), (r) {
+      _hasReachedEnd = r.isEmpty;
+      _isGettingItems = false;
+      _episodes.addAll(r);
+      page++;
+      return const _Loaded();
     });
   }
 }

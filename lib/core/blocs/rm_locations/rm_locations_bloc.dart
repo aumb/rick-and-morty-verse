@@ -33,21 +33,60 @@ class RMLocationsBloc extends Bloc<RMLocationsEvent, RMLocationsState> {
     if (event is _GetLocations) {
       _isGettingItems = true;
       if (state is! _Initial) {
-        yield const RMLocationsState.loading();
+        yield const _Loading();
       }
       final result = await _locationsRepository.getLocations(page);
-      yield* _mapGetEpisodes(result);
+      yield* _mapGetLocations(result);
+    } else if (event is _SearchLocations) {
+      _isGettingItems = true;
+      page = 1;
+      yield const _Loading();
+      final result =
+          await _locationsRepository.getLocations(page, query: event.query);
+      yield* _mapSearchLocations(result);
+    } else if (event is _SearchMoreLocations) {
+      _isGettingItems = true;
+      yield const _LoadingMore();
+      final result =
+          await _locationsRepository.getLocations(page, query: event.query);
+      yield* _mapSearchMoreLocations(result);
     }
   }
 
-  Stream<RMLocationsState> _mapGetEpisodes(
+  Stream<RMLocationsState> _mapGetLocations(
       Either<Failure, List<RMLocation?>> result) async* {
-    yield result.fold((l) => const RMLocationsState.error(), (r) {
+    yield result.fold((l) => const _Error(), (r) {
       _hasReachedEnd = r.isEmpty;
       _isGettingItems = false;
       _locations.addAll(r);
       page++;
-      return const RMLocationsState.loaded();
+      return const _Loaded();
+    });
+  }
+
+  Stream<RMLocationsState> _mapSearchLocations(
+      Either<Failure, List<RMLocation?>> result) async* {
+    yield result.fold((l) => const _Error(), (r) {
+      _locations
+        ..clear()
+        ..addAll(r);
+      _isGettingItems = false;
+      page++;
+      if (r.isEmpty) {
+        return const _Empty();
+      }
+      return const _Loaded();
+    });
+  }
+
+  Stream<RMLocationsState> _mapSearchMoreLocations(
+      Either<Failure, List<RMLocation?>> result) async* {
+    yield result.fold((l) => const _Error(), (r) {
+      _hasReachedEnd = r.isEmpty;
+      _isGettingItems = false;
+      _locations.addAll(r);
+      page++;
+      return const _Loaded();
     });
   }
 }

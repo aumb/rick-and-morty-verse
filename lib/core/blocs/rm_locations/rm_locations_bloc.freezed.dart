@@ -20,6 +20,18 @@ class _$RMLocationsEventTearOff {
   _GetLocations getLocations() {
     return const _GetLocations();
   }
+
+  _SearchLocations searchLocations({required String query}) {
+    return _SearchLocations(
+      query: query,
+    );
+  }
+
+  _SearchMoreLocations searchMoreLocations({required String query}) {
+    return _SearchMoreLocations(
+      query: query,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,22 +42,30 @@ mixin _$RMLocationsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getLocations,
+    required TResult Function(String query) searchLocations,
+    required TResult Function(String query) searchMoreLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getLocations,
+    TResult Function(String query)? searchLocations,
+    TResult Function(String query)? searchMoreLocations,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetLocations value) getLocations,
+    required TResult Function(_SearchLocations value) searchLocations,
+    required TResult Function(_SearchMoreLocations value) searchMoreLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetLocations value)? getLocations,
+    TResult Function(_SearchLocations value)? searchLocations,
+    TResult Function(_SearchMoreLocations value)? searchMoreLocations,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -109,6 +129,8 @@ class _$_GetLocations implements _GetLocations {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getLocations,
+    required TResult Function(String query) searchLocations,
+    required TResult Function(String query) searchMoreLocations,
   }) {
     return getLocations();
   }
@@ -117,6 +139,8 @@ class _$_GetLocations implements _GetLocations {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getLocations,
+    TResult Function(String query)? searchLocations,
+    TResult Function(String query)? searchMoreLocations,
     required TResult orElse(),
   }) {
     if (getLocations != null) {
@@ -129,6 +153,8 @@ class _$_GetLocations implements _GetLocations {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetLocations value) getLocations,
+    required TResult Function(_SearchLocations value) searchLocations,
+    required TResult Function(_SearchMoreLocations value) searchMoreLocations,
   }) {
     return getLocations(this);
   }
@@ -137,6 +163,8 @@ class _$_GetLocations implements _GetLocations {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetLocations value)? getLocations,
+    TResult Function(_SearchLocations value)? searchLocations,
+    TResult Function(_SearchMoreLocations value)? searchMoreLocations,
     required TResult orElse(),
   }) {
     if (getLocations != null) {
@@ -148,6 +176,248 @@ class _$_GetLocations implements _GetLocations {
 
 abstract class _GetLocations implements RMLocationsEvent {
   const factory _GetLocations() = _$_GetLocations;
+}
+
+/// @nodoc
+abstract class _$SearchLocationsCopyWith<$Res> {
+  factory _$SearchLocationsCopyWith(
+          _SearchLocations value, $Res Function(_SearchLocations) then) =
+      __$SearchLocationsCopyWithImpl<$Res>;
+  $Res call({String query});
+}
+
+/// @nodoc
+class __$SearchLocationsCopyWithImpl<$Res>
+    extends _$RMLocationsEventCopyWithImpl<$Res>
+    implements _$SearchLocationsCopyWith<$Res> {
+  __$SearchLocationsCopyWithImpl(
+      _SearchLocations _value, $Res Function(_SearchLocations) _then)
+      : super(_value, (v) => _then(v as _SearchLocations));
+
+  @override
+  _SearchLocations get _value => super._value as _SearchLocations;
+
+  @override
+  $Res call({
+    Object? query = freezed,
+  }) {
+    return _then(_SearchLocations(
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchLocations implements _SearchLocations {
+  const _$_SearchLocations({required this.query});
+
+  @override
+  final String query;
+
+  @override
+  String toString() {
+    return 'RMLocationsEvent.searchLocations(query: $query)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SearchLocations &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SearchLocationsCopyWith<_SearchLocations> get copyWith =>
+      __$SearchLocationsCopyWithImpl<_SearchLocations>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getLocations,
+    required TResult Function(String query) searchLocations,
+    required TResult Function(String query) searchMoreLocations,
+  }) {
+    return searchLocations(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getLocations,
+    TResult Function(String query)? searchLocations,
+    TResult Function(String query)? searchMoreLocations,
+    required TResult orElse(),
+  }) {
+    if (searchLocations != null) {
+      return searchLocations(query);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetLocations value) getLocations,
+    required TResult Function(_SearchLocations value) searchLocations,
+    required TResult Function(_SearchMoreLocations value) searchMoreLocations,
+  }) {
+    return searchLocations(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetLocations value)? getLocations,
+    TResult Function(_SearchLocations value)? searchLocations,
+    TResult Function(_SearchMoreLocations value)? searchMoreLocations,
+    required TResult orElse(),
+  }) {
+    if (searchLocations != null) {
+      return searchLocations(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchLocations implements RMLocationsEvent {
+  const factory _SearchLocations({required String query}) = _$_SearchLocations;
+
+  String get query => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SearchLocationsCopyWith<_SearchLocations> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SearchMoreLocationsCopyWith<$Res> {
+  factory _$SearchMoreLocationsCopyWith(_SearchMoreLocations value,
+          $Res Function(_SearchMoreLocations) then) =
+      __$SearchMoreLocationsCopyWithImpl<$Res>;
+  $Res call({String query});
+}
+
+/// @nodoc
+class __$SearchMoreLocationsCopyWithImpl<$Res>
+    extends _$RMLocationsEventCopyWithImpl<$Res>
+    implements _$SearchMoreLocationsCopyWith<$Res> {
+  __$SearchMoreLocationsCopyWithImpl(
+      _SearchMoreLocations _value, $Res Function(_SearchMoreLocations) _then)
+      : super(_value, (v) => _then(v as _SearchMoreLocations));
+
+  @override
+  _SearchMoreLocations get _value => super._value as _SearchMoreLocations;
+
+  @override
+  $Res call({
+    Object? query = freezed,
+  }) {
+    return _then(_SearchMoreLocations(
+      query: query == freezed
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchMoreLocations implements _SearchMoreLocations {
+  const _$_SearchMoreLocations({required this.query});
+
+  @override
+  final String query;
+
+  @override
+  String toString() {
+    return 'RMLocationsEvent.searchMoreLocations(query: $query)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SearchMoreLocations &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SearchMoreLocationsCopyWith<_SearchMoreLocations> get copyWith =>
+      __$SearchMoreLocationsCopyWithImpl<_SearchMoreLocations>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getLocations,
+    required TResult Function(String query) searchLocations,
+    required TResult Function(String query) searchMoreLocations,
+  }) {
+    return searchMoreLocations(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getLocations,
+    TResult Function(String query)? searchLocations,
+    TResult Function(String query)? searchMoreLocations,
+    required TResult orElse(),
+  }) {
+    if (searchMoreLocations != null) {
+      return searchMoreLocations(query);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetLocations value) getLocations,
+    required TResult Function(_SearchLocations value) searchLocations,
+    required TResult Function(_SearchMoreLocations value) searchMoreLocations,
+  }) {
+    return searchMoreLocations(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetLocations value)? getLocations,
+    TResult Function(_SearchLocations value)? searchLocations,
+    TResult Function(_SearchMoreLocations value)? searchMoreLocations,
+    required TResult orElse(),
+  }) {
+    if (searchMoreLocations != null) {
+      return searchMoreLocations(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchMoreLocations implements RMLocationsEvent {
+  const factory _SearchMoreLocations({required String query}) =
+      _$_SearchMoreLocations;
+
+  String get query => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SearchMoreLocationsCopyWith<_SearchMoreLocations> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -169,6 +439,14 @@ class _$RMLocationsStateTearOff {
   _Error error() {
     return const _Error();
   }
+
+  _LoadingMore loadingMore() {
+    return const _LoadingMore();
+  }
+
+  _Empty empty() {
+    return const _Empty();
+  }
 }
 
 /// @nodoc
@@ -182,6 +460,8 @@ mixin _$RMLocationsState {
     required TResult Function() loading,
     required TResult Function() loaded,
     required TResult Function() error,
+    required TResult Function() loadingMore,
+    required TResult Function() empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -190,6 +470,8 @@ mixin _$RMLocationsState {
     TResult Function()? loading,
     TResult Function()? loaded,
     TResult Function()? error,
+    TResult Function()? loadingMore,
+    TResult Function()? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -199,6 +481,8 @@ mixin _$RMLocationsState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(_LoadingMore value) loadingMore,
+    required TResult Function(_Empty value) empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -207,6 +491,8 @@ mixin _$RMLocationsState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(_LoadingMore value)? loadingMore,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -270,6 +556,8 @@ class _$_Initial implements _Initial {
     required TResult Function() loading,
     required TResult Function() loaded,
     required TResult Function() error,
+    required TResult Function() loadingMore,
+    required TResult Function() empty,
   }) {
     return initial();
   }
@@ -281,6 +569,8 @@ class _$_Initial implements _Initial {
     TResult Function()? loading,
     TResult Function()? loaded,
     TResult Function()? error,
+    TResult Function()? loadingMore,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -296,6 +586,8 @@ class _$_Initial implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(_LoadingMore value) loadingMore,
+    required TResult Function(_Empty value) empty,
   }) {
     return initial(this);
   }
@@ -307,6 +599,8 @@ class _$_Initial implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(_LoadingMore value)? loadingMore,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -361,6 +655,8 @@ class _$_Loading implements _Loading {
     required TResult Function() loading,
     required TResult Function() loaded,
     required TResult Function() error,
+    required TResult Function() loadingMore,
+    required TResult Function() empty,
   }) {
     return loading();
   }
@@ -372,6 +668,8 @@ class _$_Loading implements _Loading {
     TResult Function()? loading,
     TResult Function()? loaded,
     TResult Function()? error,
+    TResult Function()? loadingMore,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -387,6 +685,8 @@ class _$_Loading implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(_LoadingMore value) loadingMore,
+    required TResult Function(_Empty value) empty,
   }) {
     return loading(this);
   }
@@ -398,6 +698,8 @@ class _$_Loading implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(_LoadingMore value)? loadingMore,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -452,6 +754,8 @@ class _$_Loaded implements _Loaded {
     required TResult Function() loading,
     required TResult Function() loaded,
     required TResult Function() error,
+    required TResult Function() loadingMore,
+    required TResult Function() empty,
   }) {
     return loaded();
   }
@@ -463,6 +767,8 @@ class _$_Loaded implements _Loaded {
     TResult Function()? loading,
     TResult Function()? loaded,
     TResult Function()? error,
+    TResult Function()? loadingMore,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -478,6 +784,8 @@ class _$_Loaded implements _Loaded {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(_LoadingMore value) loadingMore,
+    required TResult Function(_Empty value) empty,
   }) {
     return loaded(this);
   }
@@ -489,6 +797,8 @@ class _$_Loaded implements _Loaded {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(_LoadingMore value)? loadingMore,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -543,6 +853,8 @@ class _$_Error implements _Error {
     required TResult Function() loading,
     required TResult Function() loaded,
     required TResult Function() error,
+    required TResult Function() loadingMore,
+    required TResult Function() empty,
   }) {
     return error();
   }
@@ -554,6 +866,8 @@ class _$_Error implements _Error {
     TResult Function()? loading,
     TResult Function()? loaded,
     TResult Function()? error,
+    TResult Function()? loadingMore,
+    TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -569,6 +883,8 @@ class _$_Error implements _Error {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
+    required TResult Function(_LoadingMore value) loadingMore,
+    required TResult Function(_Empty value) empty,
   }) {
     return error(this);
   }
@@ -580,6 +896,8 @@ class _$_Error implements _Error {
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
+    TResult Function(_LoadingMore value)? loadingMore,
+    TResult Function(_Empty value)? empty,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -591,4 +909,205 @@ class _$_Error implements _Error {
 
 abstract class _Error implements RMLocationsState {
   const factory _Error() = _$_Error;
+}
+
+/// @nodoc
+abstract class _$LoadingMoreCopyWith<$Res> {
+  factory _$LoadingMoreCopyWith(
+          _LoadingMore value, $Res Function(_LoadingMore) then) =
+      __$LoadingMoreCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingMoreCopyWithImpl<$Res>
+    extends _$RMLocationsStateCopyWithImpl<$Res>
+    implements _$LoadingMoreCopyWith<$Res> {
+  __$LoadingMoreCopyWithImpl(
+      _LoadingMore _value, $Res Function(_LoadingMore) _then)
+      : super(_value, (v) => _then(v as _LoadingMore));
+
+  @override
+  _LoadingMore get _value => super._value as _LoadingMore;
+}
+
+/// @nodoc
+
+class _$_LoadingMore implements _LoadingMore {
+  const _$_LoadingMore();
+
+  @override
+  String toString() {
+    return 'RMLocationsState.loadingMore()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LoadingMore);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+    required TResult Function() loadingMore,
+    required TResult Function() empty,
+  }) {
+    return loadingMore();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    TResult Function()? loadingMore,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (loadingMore != null) {
+      return loadingMore();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+    required TResult Function(_LoadingMore value) loadingMore,
+    required TResult Function(_Empty value) empty,
+  }) {
+    return loadingMore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    TResult Function(_LoadingMore value)? loadingMore,
+    TResult Function(_Empty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (loadingMore != null) {
+      return loadingMore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingMore implements RMLocationsState {
+  const factory _LoadingMore() = _$_LoadingMore;
+}
+
+/// @nodoc
+abstract class _$EmptyCopyWith<$Res> {
+  factory _$EmptyCopyWith(_Empty value, $Res Function(_Empty) then) =
+      __$EmptyCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$EmptyCopyWithImpl<$Res> extends _$RMLocationsStateCopyWithImpl<$Res>
+    implements _$EmptyCopyWith<$Res> {
+  __$EmptyCopyWithImpl(_Empty _value, $Res Function(_Empty) _then)
+      : super(_value, (v) => _then(v as _Empty));
+
+  @override
+  _Empty get _value => super._value as _Empty;
+}
+
+/// @nodoc
+
+class _$_Empty implements _Empty {
+  const _$_Empty();
+
+  @override
+  String toString() {
+    return 'RMLocationsState.empty()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _Empty);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() loaded,
+    required TResult Function() error,
+    required TResult Function() loadingMore,
+    required TResult Function() empty,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? loaded,
+    TResult Function()? error,
+    TResult Function()? loadingMore,
+    TResult Function()? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_Error value) error,
+    required TResult Function(_LoadingMore value) loadingMore,
+    required TResult Function(_Empty value) empty,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_Error value)? error,
+    TResult Function(_LoadingMore value)? loadingMore,
+    TResult Function(_Empty value)? empty,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Empty implements RMLocationsState {
+  const factory _Empty() = _$_Empty;
 }

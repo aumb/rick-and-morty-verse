@@ -45,15 +45,6 @@ void main() {
     );
   }
 
-  void setupExceptionResponse() {
-    when(() => mockGraphQlClient.query(any())).thenAnswer(
-      (_) async => QueryResult(
-        source: QueryResultSource.network,
-        exception: OperationException(),
-      ),
-    );
-  }
-
   void setupErrorResponse() {
     when(() => mockGraphQlClient.query(any())).thenThrow(Exception());
   }
@@ -86,17 +77,6 @@ void main() {
 
     test('should return a server failure if response is an error', () async {
       setupErrorResponse();
-      dynamic failure;
-
-      final result = await repository.getEpisodes(1);
-
-      result.fold((l) => failure = l, (r) => null);
-
-      expect(failure, isA<ServerFailure>());
-    });
-
-    test('should return a server failure if response has exception', () async {
-      setupExceptionResponse();
       dynamic failure;
 
       final result = await repository.getEpisodes(1);

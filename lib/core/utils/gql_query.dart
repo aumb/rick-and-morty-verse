@@ -1,7 +1,7 @@
 mixin GqlQuery {
   static String charactersQuery = '''
-  query (\$page: Int!){
-    characters(page: \$page){
+  query (\$page: Int!, \$query: String){
+    characters(page: \$page, filter: { name: \$query }){
       results{
         id
         name
@@ -22,8 +22,8 @@ mixin GqlQuery {
   ''';
 
   static String locationsQuery = '''
-  query (\$page: Int!){
-    locations(page: \$page){
+  query (\$page: Int!, \$query: String){
+    locations(page: \$page, filter: { name: \$query }){
       results{
         id
         name
@@ -35,8 +35,8 @@ mixin GqlQuery {
   ''';
 
   static String episodesQuery = '''
-  query (\$page: Int!){
-    episodes(page: \$page){
+  query (\$page: Int!, \$query: String){
+    episodes(page: \$page, filter: { name: \$query }){
       results{
         id
         name

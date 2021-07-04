@@ -33,21 +33,60 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     if (event is _GetCharacters) {
       _isGettingItems = true;
       if (state is! _Initial) {
-        yield const CharactersState.loading();
+        yield const _Loading();
       }
       final result = await _charactersRepository.getCharacters(page);
       yield* _mapGetCharacters(result);
+    } else if (event is _SearchCharacters) {
+      _isGettingItems = true;
+      page = 1;
+      yield const _Loading();
+      final result =
+          await _charactersRepository.getCharacters(page, query: event.query);
+      yield* _mapSearchCharacters(result);
+    } else if (event is _SearchMoreCharacters) {
+      _isGettingItems = true;
+      yield const _LoadingMore();
+      final result =
+          await _charactersRepository.getCharacters(page, query: event.query);
+      yield* _mapSearchMoreCharacters(result);
     }
   }
 
   Stream<CharactersState> _mapGetCharacters(
       Either<Failure, List<Character?>> result) async* {
-    yield result.fold((l) => const CharactersState.error(), (r) {
+    yield result.fold((l) => const _Error(), (r) {
       _hasReachedEnd = r.isEmpty;
       _isGettingItems = false;
       _characters.addAll(r);
       page++;
-      return const CharactersState.loaded();
+      return const _Loaded();
+    });
+  }
+
+  Stream<CharactersState> _mapSearchCharacters(
+      Either<Failure, List<Character?>> result) async* {
+    yield result.fold((l) => const _Error(), (r) {
+      _characters
+        ..clear()
+        ..addAll(r);
+      _isGettingItems = false;
+      page++;
+      if (r.isEmpty) {
+        return const _Empty();
+      }
+      return const _Loaded();
+    });
+  }
+
+  Stream<CharactersState> _mapSearchMoreCharacters(
+      Either<Failure, List<Character?>> result) async* {
+    yield result.fold((l) => const _Error(), (r) {
+      _hasReachedEnd = r.isEmpty;
+      _isGettingItems = false;
+      _characters.addAll(r);
+      page++;
+      return const _Loaded();
     });
   }
 }

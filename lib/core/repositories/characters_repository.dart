@@ -6,7 +6,8 @@ import 'package:rick_and_morty_verse/core/utils/gql_query.dart';
 import 'package:rick_and_morty_verse/core/utils/safe_print.dart';
 
 abstract class CharactersRepositoryContract {
-  Future<Either<Failure, List<Character?>>> getCharacters(int page);
+  Future<Either<Failure, List<Character?>>> getCharacters(int page,
+      {String query});
 }
 
 class CharactersRepository implements CharactersRepositoryContract {
@@ -15,12 +16,13 @@ class CharactersRepository implements CharactersRepositoryContract {
   final GraphQLClient _client;
 
   @override
-  Future<Either<Failure, List<Character?>>> getCharacters(int page) async {
+  Future<Either<Failure, List<Character?>>> getCharacters(int page,
+      {String? query}) async {
     try {
       final result = await _client.query(
         QueryOptions(
           document: gql(GqlQuery.charactersQuery),
-          variables: {'page': page},
+          variables: {'page': page, 'query': query ?? ''},
         ),
       );
       if (result.data == null) {

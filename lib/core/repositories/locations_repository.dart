@@ -15,18 +15,15 @@ class RMLocationsRepository implements RMLocationsRepositoryContract {
   final GraphQLClient _client;
 
   @override
-  Future<Either<Failure, List<RMLocation?>>> getLocations(int page) async {
+  Future<Either<Failure, List<RMLocation?>>> getLocations(int page,
+      {String? query}) async {
     try {
       final result = await _client.query(
         QueryOptions(
           document: gql(GqlQuery.locationsQuery),
-          variables: {'page': page},
+          variables: {'page': page, 'query': query},
         ),
       );
-      if (result.hasException) {
-        safePrint(result.exception.toString());
-        return Left(ServerFailure());
-      }
       if (result.data == null) {
         return const Right([]);
       }

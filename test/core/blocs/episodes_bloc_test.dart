@@ -25,8 +25,12 @@ void main() {
   });
 
   void setUpSuccessfullResponse() {
-    when(() => mockEpisodesRepository.getEpisodes(any()))
-        .thenAnswer((_) async => Right(tEpisodes));
+    when(
+      () => mockEpisodesRepository.getEpisodes(
+        any(),
+        query: any(named: 'query'),
+      ),
+    ).thenAnswer((_) async => Right(tEpisodes));
   }
 
   tearDown(() {
@@ -57,7 +61,7 @@ void main() {
 
       blocTest<EpisodesBloc, EpisodesState>(
         '''emits EpisodesState.loading() EpisodesState.loaded() when 
-        event is called first time''',
+        event is called''',
         build: () {
           setUpSuccessfullResponse();
           bloc.emit(const EpisodesState.loaded());
@@ -87,6 +91,89 @@ void main() {
           expect(bloc.episodes.length, equals(0));
           expect(bloc.canGetMore, equals(false));
           return [const EpisodesState.loading(), const EpisodesState.loaded()];
+        },
+      );
+    });
+
+    group('EpisodesEvent.searchEpisodes', () {
+      blocTest<EpisodesBloc, EpisodesState>(
+        '''emits EpisodesState.loading() EpisodesState.loaded() when 
+        event is called''',
+        build: () {
+          setUpSuccessfullResponse();
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const EpisodesEvent.searchEpisodes(query: ''),
+        ),
+        expect: () {
+          expect(bloc.episodes.length, equals(tEpisodes.length));
+          return [const EpisodesState.loading(), const EpisodesState.loaded()];
+        },
+      );
+
+      blocTest<EpisodesBloc, EpisodesState>(
+        '''should emit EpisodesState.empty() when list is empty''',
+        build: () {
+          when(
+            () => mockEpisodesRepository.getEpisodes(
+              any(),
+              query: any(named: 'query'),
+            ),
+          ).thenAnswer((_) async => const Right([]));
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const EpisodesEvent.searchEpisodes(query: ''),
+        ),
+        expect: () {
+          return [const EpisodesState.loading(), const EpisodesState.empty()];
+        },
+      );
+    });
+
+    group('EpisodesEvent.searchMoreEpisodes', () {
+      blocTest<EpisodesBloc, EpisodesState>(
+        '''emits EpisodesState.loading() EpisodesState.loaded() when 
+        event is called''',
+        build: () {
+          setUpSuccessfullResponse();
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const EpisodesEvent.searchMoreEpisodes(query: ''),
+        ),
+        expect: () {
+          expect(bloc.episodes.length, equals(tEpisodes.length));
+          return [
+            const EpisodesState.loadingMore(),
+            const EpisodesState.loaded()
+          ];
+        },
+      );
+
+      blocTest<EpisodesBloc, EpisodesState>(
+        '''should change canGetMore to false when list is empty''',
+        build: () {
+          when(
+            () => mockEpisodesRepository.getEpisodes(
+              any(),
+              query: any(named: 'query'),
+            ),
+          ).thenAnswer((_) async => const Right([]));
+          bloc.emit(const EpisodesState.loaded());
+          return bloc;
+        },
+        act: (_) => bloc.add(
+          const EpisodesEvent.searchMoreEpisodes(query: ''),
+        ),
+        expect: () {
+          expect(bloc.episodes.length, equals(0));
+          expect(bloc.canGetMore, equals(false));
+          return [
+            const EpisodesState.loadingMore(),
+            const EpisodesState.loaded()
+          ];
         },
       );
     });
