@@ -20,6 +20,8 @@ class ThemeUtils {
     textTheme: GoogleFonts.concertOneTextTheme(ThemeData.light().textTheme),
     bottomAppBarColor: ColorUtils.lightBottomAppBarColor,
     tabBarTheme: TabBarTheme(
+      labelColor: ThemeData.light().textTheme.bodyText2?.color,
+      unselectedLabelColor: ThemeData.light().textTheme.bodyText2?.color,
       labelStyle: GoogleFonts.concertOne(),
       unselectedLabelStyle: GoogleFonts.concertOne(),
     ),
@@ -39,6 +41,8 @@ class ThemeUtils {
     textTheme: GoogleFonts.concertOneTextTheme(ThemeData.dark().textTheme),
     bottomAppBarColor: ColorUtils.darkBottomAppBarColor,
     tabBarTheme: TabBarTheme(
+      labelColor: ThemeData.dark().textTheme.bodyText2?.color,
+      unselectedLabelColor: ThemeData.dark().textTheme.bodyText2?.color,
       labelStyle: GoogleFonts.concertOne(),
       unselectedLabelStyle: GoogleFonts.concertOne(),
     ),

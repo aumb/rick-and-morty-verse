@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty_verse/components/element_card.dart';
 import 'package:rick_and_morty_verse/core/models/character/character.dart';
@@ -22,6 +25,7 @@ class CharacterCard extends StatelessWidget {
         key: const ValueKey('character_name'),
         style: Theme.of(context).textTheme.headline5,
       ),
+      if (!kIsWeb && !Platform.isIOS) const SizedBox(height: 4),
       Row(
         children: [
           CharacterStatusWidget(character: character),

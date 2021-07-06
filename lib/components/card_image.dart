@@ -20,6 +20,9 @@ class CardImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final intendedHeight = height * 0.3;
+    if (url.isEmpty) {
+      return _buildPlaceholder(intendedHeight);
+    }
     return CachedNetworkImage(
         imageUrl: url,
         imageBuilder: (context, imageProvider) => Container(

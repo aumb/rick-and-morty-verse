@@ -30,7 +30,10 @@ class ListPageSkeleton<T> extends StatelessWidget {
       controller: controller,
       body: isInitialLoad
           ? const SliverFillRemaining(
-              child: Center(child: CircularProgressIndicator()),
+              child: Center(
+                  child: CircularProgressIndicator(
+                key: ValueKey('list_skeleton_loader'),
+              )),
             )
           : SliverList(
               delegate: SliverChildBuilderDelegate(

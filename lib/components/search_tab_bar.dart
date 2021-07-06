@@ -18,6 +18,7 @@ class SearchTabBar extends StatelessWidget {
     return TabBar(
       tabs: searchOptions
           .map((e) => Tab(
+                key: ValueKey(e.toString()),
                 text: buttonText(e, context),
               ))
           .toList(),

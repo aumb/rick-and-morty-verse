@@ -27,6 +27,7 @@ class CustomNavBar extends StatelessWidget {
         Center(
           heightFactor: 0.6,
           child: FloatingActionButton(
+            key: const ValueKey('search_fab'),
             backgroundColor: Theme.of(context).accentColor,
             elevation: 0.1,
             onPressed: () => Navigator.of(context).push(

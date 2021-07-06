@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty_verse/core/enums/character_status_enum.dart';
 import 'package:rick_and_morty_verse/core/models/character/character.dart';
@@ -29,9 +32,13 @@ class CharacterStatusWidget extends StatelessWidget {
     final l10n = context.l10n;
 
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           key: const ValueKey('status_indicator'),
+          transform: (!kIsWeb && !Platform.isIOS)
+              ? Matrix4.translationValues(0, 3, 0)
+              : null,
           width: 8,
           height: 8,
           decoration: BoxDecoration(

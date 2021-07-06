@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty_verse/components/element_card.dart';
 import 'package:rick_and_morty_verse/core/models/episode/episode.dart';
@@ -21,6 +24,7 @@ class EpisodeCard extends StatelessWidget {
         key: const ValueKey('episode_name'),
         style: Theme.of(context).textTheme.headline5,
       ),
+      if (!kIsWeb && !Platform.isIOS) const SizedBox(height: 4),
       Text(
         episode.episode ?? l10n.unknown,
         key: const ValueKey('episode_season_number'),

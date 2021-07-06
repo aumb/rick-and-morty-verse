@@ -6,6 +6,7 @@ import 'package:rick_and_morty_verse/components/custom_bottom_modal_sheet.dart';
 import 'package:rick_and_morty_verse/components/radio_widget.dart';
 import 'package:rick_and_morty_verse/core/cubits/theme/theme_cubit.dart';
 import 'package:rick_and_morty_verse/core/enums/theme_state.dart';
+import 'package:rick_and_morty_verse/core/utils/type_of_util.dart';
 import 'package:rick_and_morty_verse/features/l10n/l10n.dart';
 import 'package:rick_and_morty_verse/features/settings/settings_page.dart';
 import 'package:rick_and_morty_verse/features/settings/widgets/theme_list_tile.dart';
@@ -14,7 +15,6 @@ import '../../helpers/helpers.dart';
 
 void main() {
   group('Settings', () {
-    Type typeOf<T>() => T;
     late ThemeCubit themeCubit;
 
     setUp(() {
